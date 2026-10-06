@@ -52,6 +52,7 @@
 - Custom, mobile-first responsive web design engineered with modern HTML5, Tailwind CSS, and vanilla JavaScript for sub-second load times.
 - Frictionless UI/UX user journeys with clear calls-to-action (CTAs), modal consultation forms, and instant click-to-call/WhatsApp triggers.
 - Dark mode and light mode accessibility features with instant persistent theme toggling.
+- **Transparent Pricing Model**: Starting price of a simple website is ₹15,000. Final project quotes scale transparently depending on the custom scope of work, features, and deliverables you want.
 
 ### Pillar 5: Google Business Profile (GMB) & Local SEO
 - Optimization of local business entity signals, geo-coordinates, operating hours, categories, and business attributes.
@@ -98,6 +99,9 @@ A: Prospective and current clients can reach leadership directly via:
 - Gmail: digitalgrowthlab2709@gmail.com
 - Instagram: @digitallabgrowth (https://www.instagram.com/digitallabgrowth)
 - Facebook: Digital Growth Lab (https://www.facebook.com/share/1BfHGAugLj/?mibextid=wwXIfr)
+
+**Q: What is the price of website design and development?**
+A: The starting price for a simple, responsive business website is ₹15,000. Final project investments scale transparently and depend on the specific custom scope of work, features, integrations, and deliverables you want.
 
 **Q: What is the typical timeframe to see SEO results?**
 A: Initial ranking movements for low-to-medium competition terms typically occur within 45 to 60 days. Major Page #1 competitive breakthroughs generally take between 90 and 180 days with consistent technical optimization and content velocity.
