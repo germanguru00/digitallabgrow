@@ -1,0 +1,1306 @@
+/* ==========================================================================
+   DIGITAL GROWTH LAB™ (Powered by Digital Marketing King®)
+   Ultra-Aesthetic Pastel Dream & Soft Twilight Design System
+   Palette: Soothing Twilight Slate, Pastel Mint, Pastel Lavender,
+            Pastel Powder Rose, Pastel Sky Blue & Soft Buttercream
+   ========================================================================== */
+
+:root {
+  /* Twilight Slate Void & Layered Soft Surfaces */
+  --bg-void: #080c16;
+  --bg-starlight: #0c1220;
+  --bg-surface: #10172a;
+  --bg-surface-elevated: #151e36;
+  --bg-card: rgba(16, 23, 42, 0.72);
+  --bg-card-hover: rgba(22, 32, 58, 0.88);
+  --bg-glass-frosted: rgba(18, 26, 48, 0.65);
+
+  /* Primary Pastel Accent: Pastel Mint / Soft Sage */
+  --mint-pastel: #a7f3d0;
+  --mint-vibrant: #6ee7b7;
+  --mint-soft: #d1fae5;
+  --mint-glow: rgba(167, 243, 208, 0.40);
+  --mint-subtle: rgba(167, 243, 208, 0.12);
+
+  /* Aliased for backward compatibility */
+  --cyan-pure: #a7f3d0;
+  --cyan-bright: #6ee7b7;
+  --cyan-azure: #7dd3fc;
+  --cyan-deep: #5eead4;
+  --cyan-glow: rgba(167, 243, 208, 0.40);
+  --cyan-subtle: rgba(167, 243, 208, 0.12);
+  --cyan-ring: rgba(167, 243, 208, 0.28);
+
+  /* Secondary Pastel Accent: Pastel Lavender / Soft Lilac */
+  --lavender-pastel: #c4b5fd;
+  --lavender-vibrant: #a78bfa;
+  --lavender-soft: #ede9fe;
+  --lavender-glow: rgba(196, 181, 253, 0.40);
+  --lavender-subtle: rgba(196, 181, 253, 0.12);
+
+  /* Aliased for backward compatibility */
+  --magenta-pure: #c4b5fd;
+  --magenta-bright: #fbcfe8;
+  --magenta-orchid: #e9d5ff;
+  --magenta-fuchsia: #a78bfa;
+  --magenta-glow: rgba(196, 181, 253, 0.40);
+  --magenta-subtle: rgba(196, 181, 253, 0.12);
+
+  /* Tertiary Pastel: Soft Rose & Peach */
+  --rose-pastel: #fbcfe8;
+  --peach-pastel: #fed7aa;
+  --sky-pastel: #bae6fd;
+  --butter-pastel: #fef08a;
+
+  /* Text & Platinum Neutral Hierarchy */
+  --text-pure: #ffffff;
+  --text-platinum: #f8fafc;
+  --text-subtle: #cbd5e1;
+  --text-dim: #94a3b8;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.15);
+  --border-cyan: rgba(167, 243, 208, 0.42);
+  --border-magenta: rgba(196, 181, 253, 0.42);
+
+  /* Aesthetic Typography Hierarchy - Razor-Sharp Modern Tech */
+  --font-display: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-accent: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Mono', 'SF Mono', Consolas, Monaco, monospace;
+}
+
+/* Global Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  background-color: var(--bg-void);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-void);
+  color: var(--text-pure);
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+::selection {
+  background: var(--mint-pastel);
+  color: #080c16;
+}
+
+/* ==========================================================================
+   AMBIENT PASTEL AURORA MESH & GRID MATRIX
+   ========================================================================== */
+.ambient-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Subtle Geometric Matrix Texture */
+.cyber-grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    linear-gradient(rgba(167, 243, 208, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167, 243, 208, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 50% 25%, black 20%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at 50% 25%, black 20%, transparent 85%);
+}
+
+/* Orb 1: Pastel Mint */
+.glow-orb-cyan {
+  position: absolute;
+  top: -160px;
+  left: 8%;
+  width: 740px;
+  height: 740px;
+  background: radial-gradient(circle, rgba(167, 243, 208, 0.16) 0%, rgba(110, 231, 183, 0.05) 45%, rgba(167, 243, 208, 0) 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: floatOrb1 22s ease-in-out infinite alternate;
+}
+
+/* Orb 2: Pastel Lavender */
+.glow-orb-magenta {
+  position: absolute;
+  top: 32%;
+  right: -140px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.16) 0%, rgba(167, 139, 250, 0.05) 45%, rgba(196, 181, 253, 0) 70%);
+  border-radius: 50%;
+  filter: blur(105px);
+  animation: floatOrb2 26s ease-in-out infinite alternate-reverse;
+}
+
+/* Orb 3: Pastel Soft Rose / Peach */
+.glow-orb-violet {
+  position: absolute;
+  bottom: 8%;
+  left: 6%;
+  width: 660px;
+  height: 660px;
+  background: radial-gradient(circle, rgba(251, 207, 232, 0.15) 0%, rgba(254, 215, 170, 0.04) 45%, rgba(251, 207, 232, 0) 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: floatOrb1 28s ease-in-out infinite alternate;
+}
+
+/* Orb 4: Pastel Powder Sky Blue */
+.glow-orb-deep-blue {
+  position: absolute;
+  top: 55%;
+  left: 45%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(186, 230, 253, 0.14) 0%, rgba(125, 211, 252, 0) 70%);
+  border-radius: 50%;
+  filter: blur(95px);
+  animation: floatOrb2 20s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, 65px) scale(1.09); }
+  100% { transform: translate(-40px, 35px) scale(0.95); }
+}
+
+@keyframes floatOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-55px, -45px) scale(1.12); }
+  100% { transform: translate(45px, 40px) scale(0.94); }
+}
+
+/* ==========================================================================
+   GLASSMORPHISM PANELS & PASTEL FROSTED CARDS
+   ========================================================================== */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 22px;
+  transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* Sleek Specular Platinum-Pastel Rim on Cards */
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.18) 30%, rgba(167, 243, 208, 0.32) 50%, rgba(196, 181, 253, 0.32) 70%, transparent 100%);
+  border-radius: 22px 22px 0 0;
+  pointer-events: none;
+}
+
+.glass-panel:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+  border-color: var(--mint-pastel);
+  box-shadow: 
+    0 22px 48px -12px rgba(0, 0, 0, 0.85),
+    0 0 28px -4px var(--mint-glow),
+    0 0 16px -4px rgba(196, 181, 253, 0.20);
+}
+
+.glass-panel-magenta:hover {
+  border-color: var(--lavender-pastel);
+  box-shadow: 
+    0 22px 48px -12px rgba(0, 0, 0, 0.85),
+    0 0 28px -4px var(--lavender-glow),
+    0 0 16px -4px rgba(167, 243, 208, 0.20);
+}
+
+/* Pastel Dream Multi-Tone Card */
+.glass-panel-iridescent {
+  background: linear-gradient(135deg, rgba(20, 28, 50, 0.78) 0%, rgba(14, 20, 36, 0.88) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(167, 243, 208, 0.32);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.glass-panel-iridescent:hover {
+  border-color: rgba(196, 181, 253, 0.55);
+  box-shadow: 
+    0 25px 50px -15px rgba(0, 0, 0, 0.9),
+    0 0 35px -5px rgba(167, 243, 208, 0.35),
+    0 0 35px -5px rgba(196, 181, 253, 0.30);
+}
+
+/* Pastel Pill Badges */
+.glass-pill {
+  font-family: var(--font-accent);
+  letter-spacing: 0.035em;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 9999px;
+  padding: 6px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(167, 243, 208, 0.4);
+}
+
+.glass-pill-cyan,
+.glass-pill-mint {
+  background: rgba(167, 243, 208, 0.10);
+  border: 1px solid rgba(167, 243, 208, 0.32);
+  color: #a7f3d0;
+}
+
+.glass-pill-magenta,
+.glass-pill-lavender {
+  background: rgba(196, 181, 253, 0.10);
+  border: 1px solid rgba(196, 181, 253, 0.32);
+  color: #ddd6fe;
+}
+
+.glass-pill-rose {
+  background: rgba(251, 207, 232, 0.10);
+  border: 1px solid rgba(251, 207, 232, 0.32);
+  color: #fbcfe8;
+}
+
+.glass-pill-gold,
+.glass-pill-butter {
+  background: rgba(254, 240, 138, 0.10);
+  border: 1px solid rgba(254, 240, 138, 0.32);
+  color: #fef08a;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY & SOFT PASTEL GRADIENTS
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.038em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 750;
+  letter-spacing: -0.032em;
+  line-height: 1.18;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.font-display {
+  font-family: var(--font-display) !important;
+}
+
+.font-heading {
+  font-family: var(--font-heading) !important;
+}
+
+.font-body {
+  font-family: var(--font-body) !important;
+}
+
+.font-accent {
+  font-family: var(--font-accent) !important;
+}
+
+.font-mono {
+  font-family: var(--font-mono) !important;
+  letter-spacing: -0.02em;
+}
+
+/* Navigation & Subhead Typography */
+nav a, .mobile-nav-link {
+  font-family: var(--font-accent);
+  letter-spacing: 0.015em;
+  transition: all 0.2s ease;
+}
+
+label {
+  font-family: var(--font-accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+}
+
+.tracking-widest {
+  letter-spacing: 0.12em !important;
+}
+
+.tracking-wider {
+  letter-spacing: 0.08em !important;
+}
+
+/* Crisp Ice to Pastel Mint / Seafoam */
+.gradient-text-cyan,
+.gradient-text-mint {
+  background: linear-gradient(135deg, #ffffff 10%, #d1fae5 45%, #a7f3d0 80%, #6ee7b7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Crisp Ice to Pastel Lavender / Soft Lilac */
+.gradient-text-magenta,
+.gradient-text-lavender {
+  background: linear-gradient(135deg, #ffffff 10%, #ede9fe 45%, #c4b5fd 80%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* The Signature Pastel Duo: Mint & Lavender */
+.gradient-text-duo {
+  background: linear-gradient(135deg, #a7f3d0 0%, #c4b5fd 50%, #fbcfe8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Quad Pastel Aurora: Mint -> Sky -> Lavender -> Rose */
+.gradient-text-aurora {
+  background: linear-gradient(135deg, #a7f3d0 0%, #7dd3fc 35%, #c4b5fd 70%, #fbcfe8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Growth & Verified Pastel Emerald */
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #ffffff 15%, #a7f3d0 60%, #6ee7b7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pastel Buttercream / Soft Gold */
+.gradient-text-gold {
+  background: linear-gradient(135deg, #ffffff 15%, #fef08a 60%, #fed7aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ambient Dropshadows */
+.text-glow-mint,
+.text-glow-cyan {
+  text-shadow: 0 0 24px rgba(167, 243, 208, 0.45);
+}
+
+.text-glow-lavender,
+.text-glow-magenta {
+  text-shadow: 0 0 24px rgba(196, 181, 253, 0.45);
+}
+
+/* ==========================================================================
+   OFFICIAL 3D CIRCULAR EMBLEM PASTEL AURA
+   ========================================================================== */
+.logo-aura-ring {
+  position: relative;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #a7f3d0 0%, #c4b5fd 50%, #fbcfe8 100%);
+  box-shadow: 
+    0 0 24px rgba(167, 243, 208, 0.45),
+    0 0 45px rgba(196, 181, 253, 0.30);
+  animation: logoPulse 6s ease-in-out infinite alternate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-aura-ring img {
+  border-radius: 50%;
+  display: block;
+}
+
+@keyframes logoPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(167, 243, 208, 0.38), 0 0 38px rgba(196, 181, 253, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 34px rgba(167, 243, 208, 0.60), 0 0 54px rgba(196, 181, 253, 0.45);
+  }
+}
+
+/* Rotating Ambient Halo for Hero Showcase */
+.hero-halo-spin {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #a7f3d0, #7dd3fc, #c4b5fd, #fbcfe8, #fef08a, #a7f3d0);
+  filter: blur(28px);
+  opacity: 0.55;
+  animation: spinHalo 18s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes spinHalo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   CHIC PASTEL ACTION BUTTONS & MICRO-INTERACTIONS
+   ========================================================================== */
+
+/* Primary Action: Pastel Mint to Sky Button */
+.btn-cyan-glow,
+.btn-mint-glow {
+  font-family: var(--font-accent);
+  letter-spacing: 0.02em;
+  position: relative;
+  background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 50%, #7dd3fc 100%);
+  color: #080c16;
+  font-weight: 800;
+  padding: 13px 28px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 6px 26px -2px rgba(167, 243, 208, 0.50);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.btn-cyan-glow::after,
+.btn-mint-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.60), transparent);
+  transform: rotate(25deg);
+  transition: all 0.75s ease;
+  pointer-events: none;
+}
+
+.btn-cyan-glow:hover::after,
+.btn-mint-glow:hover::after {
+  left: 130%;
+}
+
+.btn-cyan-glow:hover,
+.btn-mint-glow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 10px 36px 0 rgba(167, 243, 208, 0.80);
+  background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 60%, #6ee7b7 100%);
+  color: #080c16;
+}
+
+/* Secondary Action: Pastel Lavender to Rose Button */
+.btn-magenta-glow,
+.btn-lavender-glow {
+  font-family: var(--font-accent);
+  letter-spacing: 0.02em;
+  position: relative;
+  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #fbcfe8 100%);
+  color: #080c16;
+  font-weight: 800;
+  padding: 13px 28px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 6px 24px -2px rgba(196, 181, 253, 0.50);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.btn-magenta-glow::after,
+.btn-lavender-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: rotate(25deg);
+  transition: all 0.75s ease;
+  pointer-events: none;
+}
+
+.btn-magenta-glow:hover::after,
+.btn-lavender-glow:hover::after {
+  left: 130%;
+}
+
+.btn-magenta-glow:hover,
+.btn-lavender-glow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 10px 34px 0 rgba(196, 181, 253, 0.80);
+  background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 60%, #fbcfe8 100%);
+  color: #080c16;
+}
+
+/* Masterpiece Pastel Dream Multi-Gradient Button */
+.btn-aurora {
+  font-family: var(--font-accent);
+  letter-spacing: 0.02em;
+  position: relative;
+  background: linear-gradient(135deg, #a7f3d0 0%, #c4b5fd 40%, #fbcfe8 75%, #fef08a 100%);
+  background-size: 200% 200%;
+  color: #080c16;
+  font-weight: 800;
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.90),
+    0 8px 30px -4px rgba(167, 243, 208, 0.45),
+    0 8px 30px -4px rgba(196, 181, 253, 0.40);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+  animation: auroraShift 8s ease infinite alternate;
+}
+
+@keyframes auroraShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.btn-aurora:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 12px 38px 0 rgba(167, 243, 208, 0.70),
+    0 12px 38px 0 rgba(196, 181, 253, 0.65);
+}
+
+.btn-outline-cyber {
+  font-family: var(--font-accent);
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  padding: 13px 26px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(167, 243, 208, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-outline-cyber:hover {
+  background: rgba(167, 243, 208, 0.12);
+  border-color: var(--mint-pastel);
+  color: var(--mint-pastel);
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(167, 243, 208, 0.32);
+}
+
+/* ==========================================================================
+   PULSING PHONE INDICATOR & MARQUEE
+   ========================================================================== */
+.phone-pulse-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--mint-pastel);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0 0 8px var(--mint-pastel);
+}
+
+.phone-pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--mint-pastel);
+  animation: pulseMint 1.8s infinite cubic-bezier(0.24, 0, 0.38, 1);
+}
+
+@keyframes pulseMint {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(2.0); opacity: 0; }
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 3.5rem;
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: 3.5rem;
+  animation: scrollMarquee 26s linear infinite;
+}
+
+@keyframes scrollMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 3.5rem)); }
+}
+
+/* ==========================================================================
+   CUSTOM FORM INPUTS & PASTEL SLIDERS
+   ========================================================================== */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #a7f3d0 0%, #7dd3fc 40%, #c4b5fd 75%, #fbcfe8 100%);
+  outline: none;
+  transition: opacity 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--mint-pastel);
+  box-shadow: 
+    0 0 16px rgba(167, 243, 208, 0.95),
+    0 0 0 5px rgba(167, 243, 208, 0.25);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 
+    0 0 24px rgba(167, 243, 208, 1),
+    0 0 0 8px rgba(167, 243, 208, 0.35);
+}
+
+/* Form Controls */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+select,
+textarea {
+  background: rgba(16, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--mint-pastel);
+  box-shadow: 
+    0 0 0 3px rgba(167, 243, 208, 0.25),
+    0 0 16px rgba(167, 243, 208, 0.30);
+  background: rgba(22, 32, 58, 0.95);
+}
+
+/* ==========================================================================
+   FLOATING SPEED DIAL CONTACT DOCK
+   ========================================================================== */
+.floating-contact-dock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.dock-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  text-decoration: none;
+  color: #080c16;
+  border: 1px solid rgba(255, 255, 255, 0.40);
+  position: relative;
+}
+
+.dock-btn:hover {
+  transform: scale(1.12) translateY(-4px);
+}
+
+/* WhatsApp Speed Dial: Pastel Mint */
+.dock-whatsapp {
+  background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+  color: #080c16;
+  box-shadow: 0 0 25px rgba(167, 243, 208, 0.60);
+}
+
+/* Direct Phone Call: Pastel Lavender / Soft Lilac */
+.dock-call {
+  background: linear-gradient(135deg, #c4b5fd 0%, #fbcfe8 100%);
+  color: #080c16;
+  box-shadow: 0 0 25px rgba(196, 181, 253, 0.60);
+}
+
+.dock-call svg {
+  color: #080c16;
+}
+
+.dock-tooltip {
+  font-family: var(--font-accent);
+  letter-spacing: 0.02em;
+  position: absolute;
+  right: 70px;
+  white-space: nowrap;
+  background: rgba(14, 20, 36, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(167, 243, 208, 0.35);
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.25s ease;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.75),
+    0 0 15px rgba(167, 243, 208, 0.20);
+}
+
+.dock-btn:hover .dock-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   CUSTOM DUAL SCROLLBAR & MODAL
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080c16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 6px;
+  border: 2px solid #080c16;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a7f3d0 0%, #c4b5fd 100%);
+}
+
+.modal-overlay {
+  background: rgba(8, 12, 22, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+@media (max-width: 768px) {
+  .floating-contact-dock {
+    bottom: 16px;
+    right: 16px;
+  }
+  .dock-btn {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+/* ==========================================================================
+   LIGHT MODE DESIGN SYSTEM: CRISP PORCELAIN, SOFT PASTEL SILK & LUXURY CONTRAST
+   ========================================================================== */
+
+html.light {
+  color-scheme: light;
+  background-color: #f8fafc;
+}
+
+html.light,
+html.light body {
+  --bg-void: #f8fafc;
+  --bg-starlight: #f1f5f9;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.94);
+  --bg-card-hover: #ffffff;
+  --bg-glass-frosted: rgba(255, 255, 255, 0.88);
+  
+  --text-pure: #0f172a;
+  --text-platinum: #1e293b;
+  --text-subtle: #334155;
+  --text-dim: #64748b;
+  
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-light: rgba(15, 23, 42, 0.14);
+  --border-cyan: rgba(13, 148, 136, 0.35);
+  --border-magenta: rgba(147, 51, 234, 0.35);
+  
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
+}
+
+/* Ambient glow & grid overlay in light mode */
+html.light .cyber-grid-overlay {
+  background-image: 
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 50% 25%, black 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at 50% 25%, black 40%, transparent 90%);
+}
+
+html.light .glow-orb-cyan {
+  background: radial-gradient(circle, rgba(167, 243, 208, 0.28) 0%, rgba(110, 231, 183, 0.08) 45%, transparent 70%);
+}
+
+html.light .glow-orb-magenta {
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.28) 0%, rgba(167, 139, 250, 0.08) 45%, transparent 70%);
+}
+
+html.light .glow-orb-violet {
+  background: radial-gradient(circle, rgba(251, 207, 232, 0.25) 0%, rgba(254, 215, 170, 0.06) 45%, transparent 70%);
+}
+
+html.light .glow-orb-deep-blue {
+  background: radial-gradient(circle, rgba(186, 230, 253, 0.24) 0%, rgba(125, 211, 252, 0) 70%);
+}
+
+/* Base Headings & Text Color Overrides */
+html.light h1, 
+html.light h2, 
+html.light h3, 
+html.light h4, 
+html.light h5, 
+html.light h6 {
+  color: #0f172a !important;
+}
+
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #64748b !important;
+}
+
+/* Light Mode Gradients */
+html.light .gradient-text-cyan,
+html.light .gradient-text-mint {
+  background: linear-gradient(135deg, #047857 0%, #0d9488 50%, #0284c7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.light .gradient-text-magenta,
+html.light .gradient-text-lavender {
+  background: linear-gradient(135deg, #7c3aed 0%, #a21caf 50%, #db2777 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.light .gradient-text-duo {
+  background: linear-gradient(135deg, #059669 0%, #7c3aed 50%, #db2777 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.light .gradient-text-aurora {
+  background: linear-gradient(135deg, #047857 0%, #0284c7 35%, #7c3aed 70%, #db2777 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.light .gradient-text-emerald {
+  background: linear-gradient(135deg, #065f46 0%, #059669 60%, #10b981 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Dark Background Utilities mapping to Light Palettes */
+html.light .bg-\[\#080c16\],
+html.light .bg-\[\#060913\],
+html.light .bg-\[\#0a0f1e\],
+html.light .bg-\[\#050814\],
+html.light .bg-\[\#0c1220\],
+html.light .bg-\[\#10172a\] {
+  background-color: #f8fafc !important;
+}
+
+html.light section.bg-\[\#060913\]\/60,
+html.light section.bg-\[\#060913\]\/70,
+html.light section.bg-\[\#060913\]\/80,
+html.light section.bg-slate-950\/70 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .bg-slate-900,
+html.light .bg-slate-950 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-slate-900\/50,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/70,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-950\/50,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/90 {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+}
+
+/* Glass Panels & Frosted Cards */
+html.light .glass-panel,
+html.light .case-item-card,
+html.light .review-card,
+html.light .glass-panel-iridescent {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light .glass-panel::before {
+  background: linear-gradient(90deg, transparent 0%, rgba(15, 23, 42, 0.06) 30%, rgba(16, 185, 129, 0.25) 50%, rgba(139, 92, 246, 0.25) 70%, transparent 100%) !important;
+}
+
+html.light .glass-panel:hover,
+html.light .case-item-card:hover,
+html.light .review-card:hover {
+  background: #ffffff !important;
+  border-color: rgba(16, 185, 129, 0.45) !important;
+  box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.10), 0 0 20px -4px rgba(16, 185, 129, 0.20) !important;
+}
+
+/* Glass Pills in Light Mode */
+html.light .glass-pill {
+  background: rgba(15, 23, 42, 0.04) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #0f172a !important;
+}
+
+html.light .glass-pill:hover {
+  background: rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light .text-cyan-300,
+html.light .text-cyan-400 {
+  color: #0284c7 !important;
+}
+
+html.light .text-emerald-300,
+html.light .text-emerald-400 {
+  color: #047857 !important;
+}
+
+html.light .text-pink-300,
+html.light .text-pink-400 {
+  color: #be185d !important;
+}
+
+html.light .text-purple-300,
+html.light .text-purple-400 {
+  color: #6d28d9 !important;
+}
+
+/* Borders & Dividers */
+html.light .border-white\/5,
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20,
+html.light .divide-white\/5,
+html.light .divide-white\/10 {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Header & Sticky Bars */
+html.light header {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light header nav a {
+  color: #475569 !important;
+}
+
+html.light header nav a:hover {
+  color: #047857 !important;
+}
+
+html.light .top-announcement-bar,
+html.light div[class*="bg-gradient-to-r from-[#080c16]"] {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Mobile Slide-Out Drawer */
+html.light #mobile-menu-drawer {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-left: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: -10px 0 35px rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light .mobile-nav-link {
+  color: #334155 !important;
+}
+
+html.light .mobile-nav-link:hover {
+  color: #047857 !important;
+}
+
+/* Form Inputs, Selects, and Textareas */
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #0d9488 !important;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15) !important;
+}
+
+/* Interactive Sliders & Range Controls */
+html.light input[type="range"] {
+  background-color: #e2e8f0 !important;
+}
+
+/* Buttons in Light Mode */
+html.light .btn-outline-cyber {
+  border-color: rgba(15, 23, 42, 0.16) !important;
+  color: #1e293b !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+html.light .btn-outline-cyber:hover {
+  border-color: #047857 !important;
+  color: #047857 !important;
+  background-color: #ffffff !important;
+}
+
+html.light .btn-cyan-glow {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0284c7 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 18px rgba(13, 148, 136, 0.35) !important;
+}
+
+html.light .btn-cyan-glow:hover {
+  box-shadow: 0 6px 24px rgba(13, 148, 136, 0.45) !important;
+}
+
+/* Footer in Light Mode */
+html.light footer {
+  background-color: #f1f5f9 !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+  color: #475569 !important;
+}
+
+html.light footer .text-slate-400 {
+  color: #64748b !important;
+}
+
+html.light footer a:hover {
+  color: #0f172a !important;
+}
+
+/* Tables in Light Mode */
+html.light table th {
+  color: #64748b !important;
+}
+
+html.light table td {
+  color: #334155 !important;
+}
+
+/* Modals in Light Mode */
+html.light .modal-overlay {
+  background: rgba(15, 23, 42, 0.45) !important;
+}
+
+/* Light Mode Scrollbars */
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #cbd5e1 0%, #94a3b8 100%);
+  border: 2px solid #f1f5f9;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0d9488 0%, #7c3aed 100%);
+}
+
+/* Theme Toggle Button Specific Styling */
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fef08a;
+  cursor: pointer;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(254, 240, 138, 0.5);
+  color: #ffffff;
+}
+
+html.light .theme-toggle-btn {
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.15);
+  color: #0f172a;
+}
+
+html.light .theme-toggle-btn:hover {
+  background: rgba(15, 23, 42, 0.1);
+  border-color: #047857;
+  color: #047857;
+}
+
+.theme-drawer-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+html.light .theme-drawer-toggle {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.1);
+  color: #0f172a;
+}
+

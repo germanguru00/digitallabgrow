@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Kits & Value Combos | VerdantBasket Supermarket</title>
+    <meta name="description" content="One-click recipe kits and curated organic combos. Morning Breakfast boxes, Green Detox cleanses, and High-Protein Dairy kits with extra savings.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%3E%3Ctext y=%2226%22 font-size=%2228%22%3E🌿%3C/text%3E%3C/svg%3E">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5', 100: '#d1fae5', 200: '#a7f3d0', 300: '#6ee7b7', 400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857', 800: '#065f46', 900: '#062c22'
+                        },
+                        amber: { 50: '#fffbeb', 100: '#fef3c7', 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#F8FAF9] text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar py-2 px-4 border-b border-emerald-800/40">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-medium">
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 text-emerald-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <strong>15-Min Express</strong> Delivery Active
+                </span>
+                <span class="text-emerald-400/50 hidden md:inline">|</span>
+                <button onclick="openLocationModal()" class="hover:text-emerald-300 transition flex items-center gap-1 text-slate-200">
+                    <i class="fa-solid fa-location-dot text-emerald-400"></i>
+                    <span id="top-bar-city">Deliver to: <strong>Mumbai 400001</strong></span>
+                    <i class="fa-solid fa-chevron-down text-[10px] ml-0.5"></i>
+                </button>
+            </div>
+            
+            <div class="flex items-center gap-4 sm:gap-6">
+                <a href="tel:8283945753" class="hover:text-emerald-300 transition flex items-center gap-1.5 text-amber-300 font-semibold">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>Helpline: +91 82839 45753</span>
+                </a>
+                <span class="text-emerald-400/50 hidden sm:inline">|</span>
+                <a href="https://wa.me/918283945753?text=Hi%20VerdantBasket,%20I%20want%20to%20order%20recipe%20kits." target="_blank" class="hover:text-emerald-300 transition flex items-center gap-1 text-emerald-300 font-medium">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                    <span>WhatsApp Order</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header id="main-header" class="glass-header sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+            
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-2.5 group">
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-emerald-800 to-emerald-500 flex items-center justify-center text-white shadow-md shadow-emerald-700/20 group-hover:scale-105 transition">
+                        <i class="fa-solid fa-leaf text-lg sm:text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-xl sm:text-2xl font-black tracking-tight text-emerald-900 brand-font flex items-center gap-1">
+                            Verdant<span class="text-emerald-600">Basket</span>
+                        </div>
+                        <div class="text-[10px] tracking-wider uppercase font-semibold text-emerald-700 -mt-1 hidden sm:block">
+                            Nature's Supermarket
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Header Nav Links -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-xs font-bold text-slate-700">
+                <a href="index.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-emerald-700 transition">Home</a>
+                <a href="shop.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-emerald-700 transition">Store / Shop</a>
+                <a href="combos.html" class="px-3 py-2 rounded-xl text-emerald-700 bg-emerald-50 transition">Recipe Kits</a>
+                <a href="deals.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-emerald-700 transition flex items-center gap-1">
+                    <i class="fa-solid fa-fire text-amber-500 text-[10px]"></i> Offers & Deals
+                </a>
+                <a href="reviews.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-emerald-700 transition">Reviews</a>
+                <a href="contact.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-emerald-700 transition">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <a href="tel:8283945753" class="hidden lg:flex items-center gap-2 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 px-3 py-2 rounded-xl text-xs font-bold transition">
+                    <div class="w-5 h-5 rounded-full bg-amber-500 text-white flex items-center justify-center">
+                        <i class="fa-solid fa-phone text-[9px]"></i>
+                    </div>
+                    <span>8283945753</span>
+                </a>
+
+                <button onclick="openWishlistModal()" class="relative p-2 text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-xl transition">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                    <span id="wishlist-badge" class="hidden absolute top-0.5 right-0.5 w-4 h-4 bg-rose-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center">0</span>
+                </button>
+
+                <button onclick="toggleCartDrawer()" class="relative bg-emerald-600 hover:bg-emerald-700 text-white px-3 sm:px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-md shadow-emerald-600/20 transition active:scale-95">
+                    <div class="relative">
+                        <i class="fa-solid fa-bag-shopping text-base"></i>
+                        <span id="cart-item-count-badge" class="absolute -top-2 -right-2 bg-amber-400 text-slate-900 text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </div>
+                    <div class="hidden sm:flex flex-col text-left leading-none">
+                        <span class="text-[9px] uppercase font-bold text-emerald-200">Cart</span>
+                        <span id="cart-header-total" class="text-xs font-black">₹0</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto text-center space-y-3">
+            <div class="inline-flex items-center gap-1.5 bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 rounded-full text-xs font-bold text-emerald-300 uppercase tracking-wider">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Curated Chef Bundles
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-black">1-Click Recipe & Meal Combos</h1>
+            <p class="text-xs sm:text-sm text-emerald-100 max-w-xl mx-auto">
+                Save up to 25% with pre-portioned recipe kits. Zero prep hassle, pre-washed greens & artisanal staples ready in 15 mins.
+            </p>
+        </div>
+    </div>
+
+    <!-- Recipe Bundles Grid Section -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="recipe-bundles-grid">
+            <!-- Populated dynamically via app.js -->
+        </div>
+
+        <!-- Recipe Benefits & Custom Combo Helpline -->
+        <section class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4">
+                <span class="badge-pill bg-emerald-100 text-emerald-800 font-black">Custom Meal Kits</span>
+                <h3 class="text-2xl font-black text-slate-900">Want a Custom Weekly Grocery Bundle?</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Our nutritional concierges create personalized keto, vegan, diabetic-friendly, or family meal prep bundles curated to your exact dietary goals.
+                </p>
+                <div class="flex flex-wrap items-center gap-3 pt-2">
+                    <a href="tel:8283945753" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-3 rounded-xl text-xs flex items-center gap-2 transition">
+                        <i class="fa-solid fa-phone"></i> Call Concierge: 8283945753
+                    </a>
+                    <a href="https://wa.me/918283945753?text=Hi%20VerdantBasket,%20I%20want%20a%20custom%20dietary%20meal%20bundle." target="_blank" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-5 py-3 rounded-xl text-xs flex items-center gap-2 transition">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Diet Plan
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-1 text-center">
+                    <div class="text-2xl font-black text-emerald-700">100%</div>
+                    <div class="text-xs font-bold text-slate-800">Pre-Washed Produce</div>
+                    <p class="text-[11px] text-slate-500">Ready to cook immediately</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-1 text-center">
+                    <div class="text-2xl font-black text-amber-600">Save 20%+</div>
+                    <div class="text-xs font-bold text-slate-800">Bundled Discount</div>
+                    <p class="text-[11px] text-slate-500">Cheaper than buying solo</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-1 text-center">
+                    <div class="text-2xl font-black text-indigo-600">15 Mins</div>
+                    <div class="text-xs font-bold text-slate-800">Express Delivery</div>
+                    <p class="text-[11px] text-slate-500">Fast morning doorstep drop</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 space-y-1 text-center">
+                    <div class="text-2xl font-black text-rose-600">0% Plastic</div>
+                    <div class="text-xs font-bold text-slate-800">Eco-Craft Paper Crate</div>
+                    <p class="text-[11px] text-slate-500">Earth-friendly packaging</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 pt-16 pb-12 border-t border-slate-900 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-center text-xs">
+            <div class="flex items-center justify-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950"><i class="fa-solid fa-leaf"></i></div>
+                <span class="text-xl font-black text-white brand-font">VerdantBasket</span>
+            </div>
+            <p class="text-slate-400 max-w-md mx-auto">15-minute express delivery of farm fresh organic produce and chef curated recipe kits.</p>
+            <div class="text-amber-300 font-bold">Helpline & Custom Orders: +91 82839 45753</div>
+            <div class="text-slate-600">© 2026 VerdantBasket Supermarket. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer & Modals -->
+    <div id="cart-drawer-backdrop" class="cart-drawer-backdrop" onclick="toggleCartDrawer()"></div>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold"><i class="fa-solid fa-bag-shopping text-sm"></i></div>
+                <div>
+                    <h3 class="font-extrabold text-slate-900 text-base">Your Fresh Cart</h3>
+                    <p class="text-xs text-slate-500" id="cart-drawer-count-label">0 items in basket</p>
+                </div>
+            </div>
+            <button onclick="toggleCartDrawer()" class="w-8 h-8 rounded-full hover:bg-slate-200 text-slate-500 flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="px-5 py-3 bg-emerald-50/80 border-b border-emerald-100">
+            <div class="flex items-center justify-between text-xs font-bold text-emerald-900 mb-1.5">
+                <span id="free-delivery-msg">Add ₹199 more for FREE 15-Min Delivery!</span>
+                <span id="free-delivery-percent">0%</span>
+            </div>
+            <div class="w-full bg-emerald-200/70 h-2 rounded-full overflow-hidden">
+                <div id="free-delivery-progress-bar" class="bg-emerald-600 h-full rounded-full transition-all duration-500" style="width: 0%;"></div>
+            </div>
+        </div>
+        <div class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3.5" id="cart-items-container"></div>
+        <div class="p-5 border-t border-slate-200 bg-white space-y-4 shadow-xl">
+            <div class="flex justify-between text-sm font-black text-slate-900 pt-2 border-t border-slate-200">
+                <span>Grand Total</span>
+                <span id="cart-grandtotal-val" class="text-base text-emerald-700">₹0</span>
+            </div>
+            <button id="checkout-main-btn" onclick="openCheckoutModal()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 rounded-2xl flex items-center justify-between px-5 shadow-lg shadow-emerald-600/30 transition">
+                <span>Proceed to Checkout</span>
+                <span id="checkout-btn-total">₹0 Total</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="location-modal" class="modal-overlay">
+        <div class="modal-container max-w-md p-6 relative">
+            <button onclick="closeLocationModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-lg font-black text-slate-900 mb-1">Select Delivery City</h3>
+            <div class="space-y-2 text-xs font-semibold">
+                <button onclick="selectCity('Mumbai', '400001')" class="w-full text-left p-3 rounded-xl bg-emerald-50 text-emerald-900 border border-emerald-300 flex items-center justify-between">
+                    <span>Mumbai (Maharashtra)</span><span class="text-[10px] font-bold bg-emerald-200 text-emerald-800 px-2 py-0.5 rounded">15m Live</span>
+                </button>
+                <button onclick="selectCity('Bengaluru', '560001')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-slate-200 flex items-center justify-between">
+                    <span>Bengaluru (Karnataka)</span><span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">15m Live</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="wishlist-modal" class="modal-overlay">
+        <div class="modal-container max-w-lg p-6 relative">
+            <button onclick="closeWishlistModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-lg font-black text-slate-900 mb-1">Your Saved Wishlist</h3>
+            <div id="wishlist-items-container" class="space-y-3 max-h-96 overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <a href="tel:8283945753" class="floating-support-btn" title="Call Customer Support">
+        <i class="fa-solid fa-phone-volume text-amber-300"></i>
+        <span>Helpline: 8283945753</span>
+    </a>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="products.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women's Tops Collection — Uptownie Cute & Trendy Tops</title>
+  <meta name="description" content="Shop 200+ cute women's tops at Uptownie — satin corsets, milkmaid crops, tie-front cardigans, graphic tees, and balletcore wrap tops starting ₹499!">
+  <link rel="icon" href="https://uptownie.com/cdn/shop/files/Untitled_design_6_78c7c45d-0290-411e-b432-c97e0fb6746a_32x32.png?v=1785755651">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar Marquee -->
+  <div class="announcement-bar">
+    <div class="marquee-content">
+      <span>🌸 SPRING GIRLY HAUL - EXTRA 20% OFF CODE: <strong>PINK20</strong> 🌸</span>
+      <span>📞 HELP & WHATSAPP: <strong>+91 8283945753</strong> 🎀</span>
+      <span>📸 INSTAGRAM: <strong>@uptownie.official</strong> 💖</span>
+      <span>🎀 FREE EXPRESS SHIPPING ON ORDERS ₹999+ 🎀</span>
+      <span>🌸 SPRING GIRLY HAUL - EXTRA 20% OFF CODE: <strong>PINK20</strong> 🌸</span>
+      <span>📞 HELP & WHATSAPP: <strong>+91 8283945753</strong> 🎀</span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-name">UPTOWNIE 🎀</span>
+        <span class="brand-badge">Girly Tops</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="tops.html" class="nav-link active">Tops Collection</a></li>
+        <li><a href="accessories.html" class="nav-link">Cute Accessories</a></li>
+        <li><a href="bundles.html" class="nav-link">Pinterest Bundles</a></li>
+        <li><a href="lookbook.html" class="nav-link">Lookbook</a></li>
+        <li><a href="https://instagram.com/uptownie.official" target="_blank" class="nav-link" style="color:#FF1493; font-weight:800;">📸 @uptownie.official</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search tops...">
+        </div>
+
+        <a href="https://wa.me/918283945753" target="_blank" class="icon-btn" title="Contact Helpline +91 8283945753">
+          📞
+        </a>
+        <a href="https://instagram.com/uptownie.official" target="_blank" class="icon-btn" title="Visit Instagram @uptownie.official">
+          📸
+        </a>
+        <button class="icon-btn" onclick="openSizeAdvisor()" title="Size Advisor Quiz">
+          📏
+        </button>
+        <a href="cart.html" class="icon-btn" title="Shopping Bag">
+          🛍️
+          <span class="badge-count" id="cartBadge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dedicated Page Hero Banner -->
+  <section class="page-hero-banner">
+    <h1 class="page-hero-title">Cute & Trendy Tops 👚</h1>
+    <p class="page-hero-sub">Explore dream satin corsets, milkmaid floral crops, balletcore wraps & Y2K halters!</p>
+  </section>
+
+  <!-- Vibe Filter Ribbon -->
+  <section class="vibe-ribbon-section">
+    <div class="vibe-container" id="vibeContainer">
+      <!-- Dynamically filled by app.js -->
+    </div>
+  </section>
+
+  <!-- Main Shop Layout for Tops -->
+  <main class="shop-layout" id="shopSection">
+    
+    <!-- Sidebar Filters -->
+    <aside class="filter-sidebar">
+      <div class="filter-header">
+        <h3 class="filter-title">
+          <span>🎀 Filter Tops</span>
+        </h3>
+        <button class="reset-btn" onclick="resetFilters()">Reset All</button>
+      </div>
+
+      <!-- Price Range Slider -->
+      <div class="filter-group">
+        <h4 class="filter-group-title">Max Price</h4>
+        <div class="price-range-box">
+          <input type="range" id="priceRange" class="range-slider" min="300" max="1500" step="50" value="1500">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:0.8rem; color:#6B5E63;">Under</span>
+            <span class="price-val" id="priceVal">₹1500</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Size Swatches -->
+      <div class="filter-group">
+        <h4 class="filter-group-title">Size</h4>
+        <div class="size-grid">
+          <button class="size-btn" data-size="XS" onclick="setSizeFilter('XS')">XS</button>
+          <button class="size-btn" data-size="S" onclick="setSizeFilter('S')">S</button>
+          <button class="size-btn" data-size="M" onclick="setSizeFilter('M')">M</button>
+          <button class="size-btn" data-size="L" onclick="setSizeFilter('L')">L</button>
+        </div>
+      </div>
+
+      <!-- Color Swatches -->
+      <div class="filter-group">
+        <h4 class="filter-group-title">Color Palette</h4>
+        <div class="color-swatches-grid">
+          <div class="color-circle" data-hex="#FFC0CB" style="background:#FFC0CB" onclick="setColorFilter('#FFC0CB')" title="Blush Pink"></div>
+          <div class="color-circle" data-hex="#FFE4E1" style="background:#FFE4E1" onclick="setColorFilter('#FFE4E1')" title="Soft Rose"></div>
+          <div class="color-circle" data-hex="#FFFDD0" style="background:#FFFDD0" onclick="setColorFilter('#FFFDD0')" title="Cream"></div>
+          <div class="color-circle" data-hex="#E6E6FA" style="background:#E6E6FA" onclick="setColorFilter('#E6E6FA')" title="Lilac"></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Tops Products Content -->
+    <section>
+      <div class="shop-controls">
+        <div class="results-count" id="resultsCount">
+          Showing <strong>Tops</strong>
+        </div>
+
+        <div class="controls-right">
+          <select id="sortSelect" class="sort-select">
+            <option value="bestseller">Sort by: Bestsellers</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Customer Rating</option>
+          </select>
+
+          <div class="grid-toggle">
+            <button class="grid-btn" data-cols="2" onclick="setGridCols(2)" title="2 Column Grid">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="18" rx="1"/><rect x="13" y="3" width="8" height="18" rx="1"/></svg>
+            </button>
+            <button class="grid-btn active" data-cols="3" onclick="setGridCols(3)" title="3 Column Grid">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="18" rx="1"/><rect x="17" y="3" width="5" height="18" rx="1"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Cards Grid -->
+      <div class="products-grid grid-3" id="productsGrid">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quickViewModal" onclick="if(event.target === this) closeQuickView()">
+    <div class="modal-content">
+      <button class="close-drawer-btn" style="position:absolute; top:20px; right:20px;" onclick="closeQuickView()">✕</button>
+      <div id="quickViewBody"></div>
+    </div>
+  </div>
+
+  <!-- Size Advisor Quiz Modal -->
+  <div class="modal-backdrop" id="sizeAdvisorModal" onclick="if(event.target === this) closeSizeAdvisor()">
+    <div class="modal-content" style="max-width: 500px;">
+      <button class="close-drawer-btn" style="position:absolute; top:20px; right:20px;" onclick="closeSizeAdvisor()">✕</button>
+      
+      <div style="text-align:center; margin-bottom:24px;">
+        <span style="font-size:2.5rem;">📏</span>
+        <h3 style="font-family:'Playfair Display', serif; font-size:1.8rem; margin-top:8px; color:#FF1493;">Virtual Fit Advisor</h3>
+        <p style="color:#7A5C68; font-size:0.9rem;">Answer 2 quick questions to find your exact size fit!</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:24px;">
+        <div>
+          <label style="font-weight:700; font-size:0.9rem; display:block; margin-bottom:6px;">Select Your Bust Measurement (Inches):</label>
+          <select id="bustSelect" style="width:100%; padding:10px; border-radius:8px; border:2px solid #FFB3C6;">
+            <option value="30">30 - 32 inches (Extra Small)</option>
+            <option value="34" selected>33 - 35 inches (Small)</option>
+            <option value="36">36 - 37 inches (Medium)</option>
+            <option value="38">38 - 40 inches (Large)</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-weight:700; font-size:0.9rem; display:block; margin-bottom:6px;">How do you prefer your top to fit?</label>
+          <select style="width:100%; padding:10px; border-radius:8px; border:2px solid #FFB3C6;">
+            <option>Sculpted & Snug Corset Fit</option>
+            <option selected>Standard Comfort Fit</option>
+            <option>Relaxed / Oversized</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="sizeAdvisorResult" style="margin-bottom:20px;"></div>
+
+      <button class="btn-primary" style="width:100%; justify-content:center; padding:12px;" onclick="calculateSizeRecommendation()">
+        Find My Size ✨
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div>
+        <h3 style="font-family:'Playfair Display', serif; font-size:2rem; color:#FFFFFF; margin-bottom:12px;">UPTOWNIE 🎀</h3>
+        <p style="font-size:0.9rem; line-height:1.6; color:#E8D8E0; max-width:320px;">Your ultimate destination for Pinterest-inspired cute tops, satin corsets, and aesthetic cloth accessories.</p>
+        
+        <div style="margin-top:16px; display:flex; flex-direction:column; gap:8px; font-size:0.9rem; color:#FFF;">
+          <div>📞 <strong>Phone / WhatsApp:</strong> <a href="https://wa.me/918283945753" style="color:#FFB6C1; text-decoration:underline;">+91 8283945753</a></div>
+          <div>📸 <strong>Instagram:</strong> <a href="https://instagram.com/uptownie.official" target="_blank" style="color:#FFB6C1; text-decoration:underline;">@uptownie.official</a></div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop Pages</h4>
+        <ul class="footer-links">
+          <li><a href="tops.html">Tops Collection Page</a></li>
+          <li><a href="accessories.html">Cute Accessories Page</a></li>
+          <li><a href="bundles.html">Pinterest Bundles Page</a></li>
+          <li><a href="lookbook.html">Social Lookbook Page</a></li>
+          <li><a href="cart.html">Shopping Bag & Checkout</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Support</h4>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/918283945753" target="_blank">WhatsApp Helpline (+91 8283945753)</a></li>
+          <li><a href="https://instagram.com/uptownie.official" target="_blank">Insta DM (@uptownie.official)</a></li>
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">Returns & Exchange Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Join The Girly Club 🌸</h4>
+        <p style="font-size:0.85rem; color:#E8D8E0; margin-bottom:12px;">Subscribe to get 15% off your first cute shopping haul!</p>
+        <div style="display:flex; gap:8px;">
+          <input type="email" placeholder="Enter your email" style="padding:10px; border-radius:8px; border:none; width:100%; font-size:0.85rem;">
+          <button style="background:#FF1493; color:#FFF; padding:10px 16px; border-radius:8px; font-weight:700;">Join</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Uptownie Shopping Haul. Helpline: +91 8283945753 | Instagram: @uptownie.official
+    </div>
+  </footer>
+
+  <!-- App Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setCategory('Tops');
+    });
+  </script>
+</body>
+</html>

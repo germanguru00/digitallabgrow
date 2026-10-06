@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerdantBasket | Nature's Supermarket - 15-Min Express Grocery</title>
+    <meta name="description" content="VerdantBasket - India's most aesthetic online supermarket. Farm-fresh fruits, organic vegetables, pure A2 dairy, artisanal bakery, and daily staples delivered in 15 minutes.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%3E%3Ctext y=%2226%22 font-size=%2228%22%3E🌿%3C/text%3E%3C/svg%3E">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#062c22',
+                        },
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#F8FAF9] text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Canvas Confetti Container -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar py-2 px-4 border-b border-emerald-800/40">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-medium">
+            <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+                <span class="inline-flex items-center gap-1.5 text-emerald-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <strong>15-Min Express</strong> Delivery Live
+                </span>
+                <span class="text-emerald-400/50 hidden md:inline">|</span>
+                <button onclick="openLocationModal()" class="hover:text-emerald-300 transition flex items-center gap-1 text-slate-200">
+                    <i class="fa-solid fa-location-dot text-emerald-400"></i>
+                    <span id="top-bar-city">Deliver to: <strong>Mumbai 400001</strong></span>
+                    <i class="fa-solid fa-chevron-down text-[10px] ml-0.5"></i>
+                </button>
+            </div>
+            
+            <div class="flex items-center gap-4 sm:gap-6">
+                <a href="tel:8283945753" class="hover:text-emerald-300 transition flex items-center gap-1.5 text-amber-300 font-semibold">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>Helpline: +91 82839 45753</span>
+                </a>
+                <span class="text-emerald-400/50 hidden sm:inline">|</span>
+                <a href="https://wa.me/918283945753?text=Hi%20VerdantBasket,%20I%20need%20assistance%20with%20my%20grocery%20order." target="_blank" class="hover:text-emerald-300 transition flex items-center gap-1 text-emerald-300 font-medium">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                    <span>WhatsApp Order</span>
+                </a>
+                <span class="text-emerald-400/50 hidden sm:inline">|</span>
+                <span class="text-slate-300 hidden lg:inline">100% Organic & Fresh Guarantee</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header id="main-header" class="glass-header sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+            
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-2.5 group">
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-emerald-800 to-emerald-500 flex items-center justify-center text-white shadow-md shadow-emerald-700/20 group-hover:scale-105 transition">
+                        <i class="fa-solid fa-leaf text-lg sm:text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="text-xl sm:text-2xl font-black tracking-tight text-emerald-900 brand-font flex items-center gap-1">
+                            Verdant<span class="text-emerald-600">Basket</span>
+                        </div>
+                        <div class="text-[10px] tracking-wider uppercase font-semibold text-emerald-700 -mt-1 hidden sm:block">
+                            Nature's Supermarket
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Category Mega Dropdown Trigger -->
+                <div class="relative hidden lg:block ml-2">
+                    <button id="category-dropdown-btn" onclick="toggleMegaCategoryMenu()" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-900 px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-2 border border-emerald-200/80 transition">
+                        <i class="fa-solid fa-bars-staggered text-emerald-600"></i>
+                        <span>Shop Categories</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-emerald-600 transition-transform" id="category-chevron"></i>
+                    </button>
+
+                    <!-- Mega Dropdown Panel -->
+                    <div id="mega-category-menu" class="hidden absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-slate-100 p-2 z-50 transition-all animate-in fade-in">
+                        <div class="p-2 text-xs font-bold text-slate-400 uppercase tracking-wider">Explore Departments</div>
+                        <div id="mega-menu-list" class="space-y-1">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Nav Links (Multi-Page Navigation) -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-xs font-bold text-slate-700">
+                <a href="index.html" class="px-3 py-2 rounded-xl text-emerald-700 bg-emerald-50 transition">Home</a>
+                <a href="shop.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-emerald-700 transition">Store / Shop</a>
+                <a href="combos.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-emerald-700 transition">Recipe Kits</a>
+                <a href="deals.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-emerald-700 transition flex items-center gap-1">
+                    <i class="fa-solid fa-fire text-amber-500 text-[10px]"></i> Offers & Deals
+                </a>
+                <a href="reviews.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-emerald-700 transition">Reviews</a>
+                <a href="contact.html" class="px-3 py-2 rounded-xl hover:bg-slate-100 hover:text-emerald-700 transition">Contact</a>
+            </nav>
+
+            <!-- Smart Instant Search Bar -->
+            <div class="flex-1 max-w-xs xl:max-w-sm relative mx-2 hidden xl:block">
+                <div class="relative flex items-center">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 text-emerald-600 text-xs"></i>
+                    <input 
+                        type="text" 
+                        id="global-search-input"
+                        placeholder="Search 50+ items..." 
+                        class="w-full pl-9 pr-14 py-2 bg-slate-50 hover:bg-white focus:bg-white rounded-xl border border-slate-200 focus:border-emerald-500 text-xs outline-none transition placeholder:text-slate-400"
+                        autocomplete="off"
+                    >
+                    <button id="search-clear-btn" onclick="clearSearch()" class="hidden absolute right-12 text-slate-400 hover:text-slate-600 text-xs py-1 px-1.5">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <span class="absolute right-2 text-[9px] font-bold bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded">15m</span>
+                </div>
+
+                <!-- Autocomplete Dropdown -->
+                <div id="search-autocomplete-dropdown" class="search-dropdown hidden">
+                    <div id="search-results-list" class="p-2 divide-y divide-slate-100"></div>
+                </div>
+            </div>
+
+            <!-- User Quick Action Icons -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                
+                <!-- Direct Support Call Button -->
+                <a href="tel:8283945753" class="hidden lg:flex items-center gap-2 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 px-3 py-2 rounded-xl text-xs font-bold transition">
+                    <div class="w-5 h-5 rounded-full bg-amber-500 text-white flex items-center justify-center">
+                        <i class="fa-solid fa-phone text-[9px]"></i>
+                    </div>
+                    <span>8283945753</span>
+                </a>
+
+                <!-- Wishlist Trigger -->
+                <button onclick="openWishlistModal()" class="relative p-2 text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-xl transition">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                    <span id="wishlist-badge" class="hidden absolute top-0.5 right-0.5 w-4 h-4 bg-rose-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center">0</span>
+                </button>
+
+                <!-- Cart Button with Dynamic Total -->
+                <button onclick="toggleCartDrawer()" class="relative bg-emerald-600 hover:bg-emerald-700 text-white px-3 sm:px-3.5 py-2 rounded-xl flex items-center gap-2 shadow-md shadow-emerald-600/20 transition active:scale-95">
+                    <div class="relative">
+                        <i class="fa-solid fa-bag-shopping text-base"></i>
+                        <span id="cart-item-count-badge" class="absolute -top-2 -right-2 bg-amber-400 text-slate-900 text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </div>
+                    <div class="hidden sm:flex flex-col text-left leading-none">
+                        <span class="text-[9px] uppercase font-bold text-emerald-200">Cart</span>
+                        <span id="cart-header-total" class="text-xs font-black">₹0</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Bar Strip -->
+        <div class="border-t border-slate-100 bg-white px-4 py-2 flex items-center justify-between text-xs font-semibold overflow-x-auto md:hidden">
+            <a href="index.html" class="text-emerald-700 font-bold px-2 py-1 bg-emerald-50 rounded-lg">Home</a>
+            <a href="shop.html" class="text-slate-600 px-2 py-1">Shop</a>
+            <a href="combos.html" class="text-slate-600 px-2 py-1">Combos</a>
+            <a href="deals.html" class="text-slate-600 px-2 py-1">Deals</a>
+            <a href="reviews.html" class="text-slate-600 px-2 py-1">Reviews</a>
+            <a href="contact.html" class="text-slate-600 px-2 py-1">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-12">
+
+        <!-- Hero Carousel & Promotional Banners -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <!-- Swiper Carousel (2 cols) -->
+            <div class="lg:col-span-2 rounded-3xl overflow-hidden shadow-lg relative min-h-[340px] sm:min-h-[380px] bg-slate-900">
+                <div class="swiper heroSwiper h-full">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide hero-gradient-1 p-8 sm:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute -right-10 -bottom-10 opacity-20 text-[200px] pointer-events-none">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <div class="space-y-3 max-w-md z-10">
+                                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-100">
+                                    <i class="fa-solid fa-bolt text-amber-300"></i> Express 15-Min Delivery
+                                </div>
+                                <h1 class="text-3xl sm:text-4xl font-black leading-tight tracking-tight">
+                                    Farm-Fresh Produce <br><span class="text-emerald-300">Up to 40% OFF</span>
+                                </h1>
+                                <p class="text-sm text-emerald-100 line-clamp-2">
+                                    Handpicked organic Hass Avocados, berries, and crisp greens harvested this morning from certified organic orchards.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3 pt-6 z-10">
+                                <a href="shop.html?cat=fruits-vegetables" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-extrabold px-6 py-3 rounded-xl text-sm shadow-lg shadow-amber-400/30 transition transform hover:-translate-y-0.5">
+                                    Explore Fresh Produce <i class="fa-solid fa-arrow-right ml-1"></i>
+                                </a>
+                                <a href="tel:8283945753" class="bg-white/15 hover:bg-white/25 text-white font-bold px-4 py-3 rounded-xl text-sm backdrop-blur-md border border-white/20 transition">
+                                    <i class="fa-solid fa-phone mr-1"></i> Call Concierge
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide hero-gradient-2 p-8 sm:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute -right-10 -bottom-10 opacity-20 text-[200px] pointer-events-none">
+                                <i class="fa-solid fa-cheese"></i>
+                            </div>
+                            <div class="space-y-3 max-w-md z-10">
+                                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-amber-100">
+                                    <i class="fa-solid fa-clock text-amber-200"></i> Freshly Baked 5:00 AM Today
+                                </div>
+                                <h2 class="text-3xl sm:text-4xl font-black leading-tight tracking-tight">
+                                    Pure A2 Gir Cow Milk & Artisanal Sourdough
+                                </h2>
+                                <p class="text-sm text-amber-100 line-clamp-2">
+                                    Raw pasteurized A2 cow milk in glass bottles, organic soft malai paneer, and slow-fermented woodfired sourdough.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3 pt-6 z-10">
+                                <a href="shop.html?cat=dairy-bakery" class="bg-white text-slate-900 font-extrabold px-6 py-3 rounded-xl text-sm shadow-lg transition transform hover:-translate-y-0.5">
+                                    Shop Dairy & Bakery <i class="fa-solid fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide hero-gradient-3 p-8 sm:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                            <div class="space-y-3 max-w-md z-10">
+                                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-indigo-100">
+                                    <i class="fa-solid fa-shield-heart text-rose-300"></i> Immunity Boosters
+                                </div>
+                                <h2 class="text-3xl sm:text-4xl font-black leading-tight tracking-tight">
+                                    Cold-Pressed Juices & Superfood Bundles
+                                </h2>
+                                <p class="text-sm text-indigo-100 line-clamp-2">
+                                    Raw single-origin honey, matcha tea, chia seeds, and Valencia citrus juices with no added sugar.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3 pt-6 z-10">
+                                <a href="combos.html" class="bg-emerald-400 hover:bg-emerald-300 text-slate-900 font-extrabold px-6 py-3 rounded-xl text-sm shadow-lg transition transform hover:-translate-y-0.5">
+                                    View 1-Click Kits <i class="fa-solid fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!-- Side Cards -->
+            <div class="flex flex-col gap-4">
+                <div class="bg-gradient-to-br from-emerald-900 to-emerald-800 text-white p-6 rounded-3xl relative overflow-hidden flex-1 flex flex-col justify-between shadow-md">
+                    <div class="space-y-2">
+                        <span class="badge-pill bg-emerald-500/30 text-emerald-200 border-emerald-400/40">
+                            ⚡ Flash 15-Mins
+                        </span>
+                        <h3 class="text-xl font-extrabold">Instant Grocery Delivered</h3>
+                        <p class="text-xs text-emerald-200 leading-relaxed">
+                            Order any daily essentials before 11:30 PM & get them delivered to your door in 15 minutes.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-emerald-700/60 flex items-center justify-between text-xs">
+                        <span class="font-bold text-amber-300">Code: FRESH15</span>
+                        <a href="deals.html" class="text-white hover:text-amber-300 font-bold underline">View All Coupons</a>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 p-6 rounded-3xl relative overflow-hidden flex-1 flex flex-col justify-between shadow-sm">
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm">
+                                <i class="fa-solid fa-headset"></i>
+                            </span>
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-amber-900">Direct Support</span>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-900">Need Help or Bulk Order?</h3>
+                        <p class="text-xs text-slate-600">
+                            Speak directly with our store concierge on <strong>8283945753</strong> for WhatsApp orders and delivery queries.
+                        </p>
+                    </div>
+                    <div class="mt-3 flex items-center gap-2">
+                        <a href="tel:8283945753" class="flex-1 bg-amber-500 hover:bg-amber-600 text-slate-900 text-center font-bold py-2 rounded-xl text-xs transition">
+                            <i class="fa-solid fa-phone mr-1"></i> Call Now
+                        </a>
+                        <a href="https://wa.me/918283945753?text=Hi%20VerdantBasket,%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-center font-bold py-2 rounded-xl text-xs transition">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 Value Pillar Badges -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3.5 shadow-sm">
+                <div class="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shrink-0">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-slate-900">15-Min Express</h4>
+                    <p class="text-xs text-slate-500">Superfast doorstep drop</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3.5 shadow-sm">
+                <div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl shrink-0">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-slate-900">100% Organic</h4>
+                    <p class="text-xs text-slate-500">Directly from certified farms</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3.5 shadow-sm">
+                <div class="w-11 h-11 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl shrink-0">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-slate-900">Instant Refund</h4>
+                    <p class="text-xs text-slate-500">No questions asked return</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-100 flex items-center gap-3.5 shadow-sm">
+                <div class="w-11 h-11 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl shrink-0">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-slate-900">Direct Support</h4>
+                    <p class="text-xs text-slate-500">+91 82839 45753</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category "Story" Circles Bar -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900">Explore Departments</h3>
+                    <p class="text-xs text-slate-500">Handpicked top categories for your daily grocery needs</p>
+                </div>
+                <a href="shop.html" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1">
+                    <span>View All Departments</span>
+                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-3 sm:gap-4" id="category-stories-grid">
+                <!-- Rendered dynamically -->
+            </div>
+        </section>
+
+        <!-- Flash Deals & Steals Countdown Strip -->
+        <section class="bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-emerald-700/60">
+                <div class="space-y-1">
+                    <div class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-amber-300">
+                        <i class="fa-solid fa-fire text-amber-400"></i> Steal of the Day
+                    </div>
+                    <h3 class="text-2xl font-black">Flash Super Savers</h3>
+                    <p class="text-xs text-emerald-200">Limited quantity flash sale on seasonal fruits, A2 milk & imported snacks</p>
+                </div>
+
+                <!-- Timer Badge -->
+                <div class="flex items-center gap-2 bg-black/30 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-emerald-500/30">
+                    <span class="text-xs font-bold text-slate-300">Ends in:</span>
+                    <div class="flex items-center gap-1.5 font-mono font-black text-amber-300 text-base" id="flash-timer">
+                        <span class="bg-emerald-950 px-2 py-0.5 rounded" id="timer-hours">03</span>:
+                        <span class="bg-emerald-950 px-2 py-0.5 rounded" id="timer-minutes">48</span>:
+                        <span class="bg-emerald-950 px-2 py-0.5 rounded" id="timer-seconds">22</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="flash-deals-container">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+        <!-- Curated Recipe Kits & Value Combos -->
+        <section class="space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <div class="inline-flex items-center gap-1 text-xs font-extrabold uppercase tracking-wider text-emerald-700">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Chef Curated Combos
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900">One-Click Recipe & Meal Kits</h3>
+                    <p class="text-xs text-slate-500">Everything you need for delicious breakfasts, detox juices & high protein daily cooking</p>
+                </div>
+                <a href="combos.html" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1">
+                    <span>View All Kits</span>
+                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="recipe-bundles-grid">
+                <!-- Rendered via JS from RECIPE_BUNDLES -->
+            </div>
+        </section>
+
+        <!-- Bestselling Featured Catalog Preview -->
+        <section class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-1 text-xs font-extrabold uppercase tracking-wider text-emerald-700">
+                        <i class="fa-solid fa-sparkles"></i> Top Rated Essentials
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-black text-slate-900">Featured Store Items</h3>
+                    <p class="text-xs text-slate-500">Browse trending organic produce & pantry staples</p>
+                </div>
+                <a href="shop.html" class="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-5 py-2.5 rounded-xl text-xs flex items-center gap-1.5 shadow-md shadow-emerald-600/20 transition">
+                    <span>Open Full Store Catalog</span>
+                    <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5" id="products-grid">
+                <!-- Rendered by app.js -->
+            </div>
+        </section>
+
+        <!-- Customer Testimonials (Sliding Carousel) -->
+        <section class="space-y-6 relative">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div class="space-y-1">
+                    <div class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-100/80 px-3 py-1 rounded-full border border-emerald-200">
+                        <i class="fa-solid fa-star text-amber-500"></i>
+                        <span>4.9 / 5 Rating from 14,800+ Verified Buyers</span>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-black text-slate-900">Loved by Over 500,000+ Homes</h3>
+                    <p class="text-xs text-slate-500">See what real households are saying about our farm produce & 15-min delivery</p>
+                </div>
+
+                <!-- Carousel Navigation Controls -->
+                <div class="flex items-center gap-2 self-start sm:self-auto">
+                    <button id="review-prev-btn" class="w-10 h-10 rounded-full bg-white hover:bg-emerald-600 hover:text-white text-slate-700 border border-slate-200 shadow-sm flex items-center justify-center transition active:scale-95" title="Previous Review">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <button id="review-next-btn" class="w-10 h-10 rounded-full bg-white hover:bg-emerald-600 hover:text-white text-slate-700 border border-slate-200 shadow-sm flex items-center justify-center transition active:scale-95" title="Next Review">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <a href="reviews.html" class="ml-2 text-xs font-bold text-emerald-700 hover:text-emerald-800 underline">
+                        All Reviews
+                    </a>
+                </div>
+            </div>
+
+            <!-- Swiper Slider Container -->
+            <div class="swiper reviewsSwiper pb-12 overflow-hidden">
+                <div class="swiper-wrapper" id="testimonials-slider-wrapper">
+                    <!-- Populated dynamically by app.js -->
+                </div>
+                <!-- Pagination Dots -->
+                <div class="swiper-pagination reviews-swiper-pagination !bottom-0"></div>
+            </div>
+        </section>
+
+        <!-- Why Choose VerdantBasket - BigBasket Grade Guarantees -->
+        <section class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-sm space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="badge-pill bg-emerald-100 text-emerald-800">The Verdant Quality Promise</span>
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900">Why Millions Trust VerdantBasket</h3>
+                <p class="text-xs sm:text-sm text-slate-500">We inspect 40+ quality parameters before any fruit, vegetable, or dairy bottle reaches your doorstep.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 space-y-3 text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-temperature-arrow-down"></i>
+                    </div>
+                    <h4 class="font-extrabold text-base text-slate-900">Cold Chain Insulated Transit</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Milk, butter, cheeses, and berries travel in temperature-calibrated insulated pods to ensure zero microbial spoilage.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 space-y-3 text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-boxes-packing"></i>
+                    </div>
+                    <h4 class="font-extrabold text-base text-slate-900">Zero-Plastic Paper Crates</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        100% biodegradable corrugated boxes and breathable cotton pouches that care for your family and the planet.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 space-y-3 text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center text-2xl mx-auto">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h4 class="font-extrabold text-base text-slate-900">No-Questions Return on Delivery</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Don't like an avocado ripeness or tomato size? Hand it back to the rider for immediate 1-second wallet refund.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Helpline & Direct Order Banner -->
+        <section class="bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                
+                <div class="space-y-5">
+                    <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3.5 py-1 rounded-full text-xs font-bold text-emerald-300">
+                        <i class="fa-solid fa-phone-volume"></i> 24x7 Customer Helpdesk
+                    </div>
+                    <h3 class="text-3xl sm:text-4xl font-black leading-tight">
+                        Need Help With Your Grocery Order?
+                    </h3>
+                    <p class="text-sm text-emerald-200 leading-relaxed">
+                        Our dedicated support champions are available round-the-clock. Call, chat on WhatsApp, or send an inquiry for instant order resolution.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="tel:8283945753" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-black px-6 py-3.5 rounded-2xl flex items-center gap-2 text-sm shadow-xl shadow-amber-400/20 transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Call: +91 82839 45753</span>
+                        </a>
+
+                        <a href="https://wa.me/918283945753?text=Hi%20VerdantBasket,%20I%20have%20a%20question%20regarding%20an%20order." target="_blank" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-6 py-3.5 rounded-2xl flex items-center gap-2 text-sm shadow-xl shadow-emerald-500/20 transition transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>WhatsApp Concierge</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-6 sm:p-8 rounded-3xl space-y-4">
+                    <h4 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-envelope-open-text text-amber-400"></i> Send Us a Message
+                    </h4>
+                    <form onsubmit="handleContactFormSubmit(event)" class="space-y-3.5">
+                        <div>
+                            <label class="block text-xs font-semibold text-emerald-200 mb-1">Your Full Name</label>
+                            <input type="text" id="contact-name" required placeholder="e.g. Rahul Verma" class="w-full px-3.5 py-2.5 bg-white/10 border border-white/20 rounded-xl text-sm text-white placeholder:text-slate-400 focus:outline-none focus:border-amber-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-emerald-200 mb-1">Phone Number</label>
+                            <input type="tel" id="contact-phone" required placeholder="e.g. 9876543210" class="w-full px-3.5 py-2.5 bg-white/10 border border-white/20 rounded-xl text-sm text-white placeholder:text-slate-400 focus:outline-none focus:border-amber-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-emerald-200 mb-1">Inquiry / Note</label>
+                            <textarea id="contact-message" rows="2" required placeholder="Order inquiry, special request..." class="w-full px-3.5 py-2.5 bg-white/10 border border-white/20 rounded-xl text-sm text-white placeholder:text-slate-400 focus:outline-none focus:border-amber-400 resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-extrabold py-3 rounded-xl text-sm transition">
+                            Submit Inquiry <i class="fa-solid fa-paper-plane ml-1"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Aesthetic Footer -->
+    <footer class="bg-slate-950 text-slate-400 pt-16 pb-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="index.html" class="flex items-center gap-2.5">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-slate-950 shadow-md">
+                            <i class="fa-solid fa-leaf text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-black text-white brand-font tracking-tight">
+                            Verdant<span class="text-emerald-400">Basket</span>
+                        </span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                        VerdantBasket is India's premier online organic supermarket providing 15-minute express delivery for organic fruits, vegetables, Gir cow A2 dairy, and artisanal staples.
+                    </p>
+                    <div class="space-y-1.5 text-xs text-slate-300">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-emerald-400"></i>
+                            <a href="tel:8283945753" class="hover:text-emerald-400 transition font-bold text-amber-300">+91 82839 45753</a>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-emerald-400"></i>
+                            <a href="mailto:support@verdantbasket.com" class="hover:text-emerald-400 transition">support@verdantbasket.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="space-y-3 text-xs">
+                    <h5 class="font-bold text-sm text-white uppercase tracking-wider">Pages</h5>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-emerald-400 transition">Home Page</a></li>
+                        <li><a href="shop.html" class="hover:text-emerald-400 transition">Store / Shop</a></li>
+                        <li><a href="combos.html" class="hover:text-emerald-400 transition">Recipe Kits</a></li>
+                        <li><a href="deals.html" class="hover:text-emerald-400 transition">Offers & Deals</a></li>
+                        <li><a href="reviews.html" class="hover:text-emerald-400 transition">Customer Reviews</a></li>
+                        <li><a href="contact.html" class="hover:text-emerald-400 transition">Help & Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Top Departments -->
+                <div class="space-y-3 text-xs">
+                    <h5 class="font-bold text-sm text-white uppercase tracking-wider">Top Departments</h5>
+                    <ul class="space-y-2">
+                        <li><a href="shop.html?cat=fruits-vegetables" class="hover:text-emerald-400 transition">Fresh Fruits & Veggies</a></li>
+                        <li><a href="shop.html?cat=dairy-bakery" class="hover:text-emerald-400 transition">Pure A2 Milk & Bakery</a></li>
+                        <li><a href="shop.html?cat=staples-grains" class="hover:text-emerald-400 transition">Organic Staples & Atta</a></li>
+                        <li><a href="shop.html?cat=beverages" class="hover:text-emerald-400 transition">Cold-Pressed Juices</a></li>
+                        <li><a href="shop.html?cat=gourmet-organic" class="hover:text-emerald-400 transition">Gourmet & Superfoods</a></li>
+                    </ul>
+                </div>
+
+                <!-- App Download -->
+                <div class="space-y-3 text-xs">
+                    <h5 class="font-bold text-sm text-white uppercase tracking-wider">Experience App</h5>
+                    <p class="text-xs text-slate-400">Shop on the go with our lightning fast mobile apps</p>
+                    <div class="space-y-2">
+                        <div class="bg-slate-900 border border-slate-800 p-2.5 rounded-xl flex items-center gap-3 cursor-pointer hover:border-emerald-500 transition">
+                            <i class="fa-brands fa-apple text-2xl text-white"></i>
+                            <div>
+                                <div class="text-[9px] uppercase text-slate-400">Download on</div>
+                                <div class="text-xs font-bold text-white">App Store</div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 border border-slate-800 p-2.5 rounded-xl flex items-center gap-3 cursor-pointer hover:border-emerald-500 transition">
+                            <i class="fa-brands fa-google-play text-2xl text-emerald-400"></i>
+                            <div>
+                                <div class="text-[9px] uppercase text-slate-400">Get it on</div>
+                                <div class="text-xs font-bold text-white">Google Play</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Payment Methods -->
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <div>
+                    © 2026 VerdantBasket Supermarket Pvt Ltd. Helpline: <strong>+91 82839 45753</strong>
+                </div>
+                <div class="flex items-center gap-3 text-lg text-slate-400">
+                    <i class="fa-brands fa-cc-visa hover:text-white transition"></i>
+                    <i class="fa-brands fa-cc-mastercard hover:text-white transition"></i>
+                    <i class="fa-solid fa-qrcode hover:text-emerald-400 transition" title="UPI Enabled"></i>
+                    <i class="fa-solid fa-money-bill-wave hover:text-emerald-400 transition" title="Cash on Delivery"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Slide-in Cart Drawer Backdrop -->
+    <div id="cart-drawer-backdrop" class="cart-drawer-backdrop" onclick="toggleCartDrawer()"></div>
+
+    <!-- Slide-in Cart Drawer Panel -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-bag-shopping text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="font-extrabold text-slate-900 text-base">Your Fresh Cart</h3>
+                    <p class="text-xs text-slate-500" id="cart-drawer-count-label">0 items in basket</p>
+                </div>
+            </div>
+            <button onclick="toggleCartDrawer()" class="w-8 h-8 rounded-full hover:bg-slate-200 text-slate-500 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="px-5 py-3 bg-emerald-50/80 border-b border-emerald-100">
+            <div class="flex items-center justify-between text-xs font-bold text-emerald-900 mb-1.5">
+                <span id="free-delivery-msg">Add ₹199 more for FREE 15-Min Delivery!</span>
+                <span id="free-delivery-percent">0%</span>
+            </div>
+            <div class="w-full bg-emerald-200/70 h-2 rounded-full overflow-hidden">
+                <div id="free-delivery-progress-bar" class="bg-emerald-600 h-full rounded-full transition-all duration-500" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3.5" id="cart-items-container"></div>
+
+        <div class="p-5 border-t border-slate-200 bg-white space-y-4 shadow-xl">
+            <div class="flex items-center gap-2">
+                <div class="relative flex-1">
+                    <input 
+                        type="text" 
+                        id="cart-coupon-input" 
+                        placeholder="Enter Promo (e.g. FRESH15)" 
+                        class="w-full pl-3 pr-8 py-2 bg-slate-100 border border-slate-200 rounded-xl text-xs font-bold uppercase text-slate-800 focus:bg-white focus:outline-none focus:border-emerald-500"
+                    >
+                </div>
+                <button onclick="applyCartCoupon()" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2 rounded-xl text-xs transition">
+                    Apply
+                </button>
+            </div>
+
+            <div id="applied-coupon-badge" class="hidden flex items-center justify-between bg-emerald-100/70 border border-emerald-300 px-3 py-1.5 rounded-xl text-xs font-bold text-emerald-800">
+                <span class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-tag text-emerald-600"></i>
+                    <span id="applied-coupon-code-text">FRESH15</span> (-<span id="applied-coupon-discount-val">₹0</span>)
+                </span>
+                <button onclick="removeCoupon()" class="text-slate-500 hover:text-rose-600 text-xs">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </div>
+
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-3">
+                <div class="flex justify-between text-slate-600">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal-val" class="font-bold text-slate-900">₹0</span>
+                </div>
+                <div class="flex justify-between text-slate-600">
+                    <span class="flex items-center gap-1">Delivery Fee (15m)</span>
+                    <span id="cart-delivery-val" class="font-bold text-emerald-700">₹0</span>
+                </div>
+                <div id="cart-discount-row" class="hidden flex justify-between text-emerald-700 font-semibold">
+                    <span>Promo Discount</span>
+                    <span id="cart-discount-val">-₹0</span>
+                </div>
+                <div class="flex justify-between text-slate-600">
+                    <span>Handling & Packaging</span>
+                    <span id="cart-handling-val" class="font-bold text-slate-900">₹5</span>
+                </div>
+                <div class="flex justify-between text-sm font-black text-slate-900 pt-2 border-t border-slate-200">
+                    <span>Grand Total</span>
+                    <span id="cart-grandtotal-val" class="text-base text-emerald-700">₹0</span>
+                </div>
+            </div>
+
+            <button id="checkout-main-btn" onclick="openCheckoutModal()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 rounded-2xl flex items-center justify-between px-5 shadow-lg shadow-emerald-600/30 transition transform active:scale-98">
+                <div class="flex flex-col text-left leading-tight">
+                    <span class="text-[10px] uppercase font-bold text-emerald-200">Proceed to Checkout</span>
+                    <span id="checkout-btn-total" class="text-sm font-black">₹0 Total</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-xs font-bold">
+                    <span>Place Order</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Quick View Product Modal -->
+    <div id="quickview-modal" class="modal-overlay">
+        <div class="modal-container p-6 relative">
+            <button onclick="closeQuickViewModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="quickview-modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Multi-Step Checkout Modal -->
+    <div id="checkout-modal" class="modal-overlay">
+        <div class="modal-container max-w-2xl p-6 sm:p-8 relative">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="checkout-step-indicator mb-6">
+                <div class="checkout-step-item active" id="step-node-1">
+                    <div class="checkout-step-bubble">1</div>
+                    <span class="text-[11px] font-bold text-slate-700">Address</span>
+                </div>
+                <div class="checkout-step-item" id="step-node-2">
+                    <div class="checkout-step-bubble">2</div>
+                    <span class="text-[11px] font-bold text-slate-700">Slot</span>
+                </div>
+                <div class="checkout-step-item" id="step-node-3">
+                    <div class="checkout-step-bubble">3</div>
+                    <span class="text-[11px] font-bold text-slate-700">Payment</span>
+                </div>
+                <div class="checkout-step-item" id="step-node-4">
+                    <div class="checkout-step-bubble">4</div>
+                    <span class="text-[11px] font-bold text-slate-700">Status</span>
+                </div>
+            </div>
+
+            <!-- Step 1 -->
+            <div id="checkout-step-1" class="space-y-4">
+                <h3 class="text-xl font-black text-slate-900">Select Delivery Address</h3>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Full Name</label>
+                            <input type="text" id="checkout-name" value="Amit Patel" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number</label>
+                            <input type="tel" id="checkout-phone" value="8283945753" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">House / Flat / Street</label>
+                        <input type="text" id="checkout-flat" value="Flat 402, Sunshine Heights" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">City / Area</label>
+                            <input type="text" id="checkout-city" value="Bandra West, Mumbai" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Pincode</label>
+                            <input type="text" id="checkout-pincode" value="400050" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold">
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 flex justify-end">
+                    <button onclick="goToCheckoutStep(2)" class="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-6 py-3 rounded-xl text-xs shadow-md transition">
+                        Continue to Delivery Slot <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="checkout-step-2" class="hidden space-y-4">
+                <h3 class="text-xl font-black text-slate-900">Choose Delivery Timing</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <label class="border-2 border-emerald-500 bg-emerald-50 p-4 rounded-2xl cursor-pointer flex items-start gap-3">
+                        <input type="radio" name="delivery-slot" value="express-15m" checked class="accent-emerald-600 mt-1">
+                        <div>
+                            <div class="text-xs font-black text-emerald-900 flex items-center gap-1.5">
+                                <i class="fa-solid fa-bolt text-amber-500"></i> Express 15-Min Delivery
+                            </div>
+                            <div class="text-[11px] text-emerald-700">Rider arriving in 12-15 mins</div>
+                        </div>
+                    </label>
+                    <label class="border border-slate-200 hover:border-emerald-300 p-4 rounded-2xl cursor-pointer flex items-start gap-3">
+                        <input type="radio" name="delivery-slot" value="morning-slot" class="accent-emerald-600 mt-1">
+                        <div>
+                            <div class="text-xs font-bold text-slate-900">Tomorrow Morning Slot</div>
+                            <div class="text-[11px] text-slate-500">7:00 AM - 9:00 AM</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="pt-4 flex justify-between items-center">
+                    <button onclick="goToCheckoutStep(1)" class="text-xs font-bold text-slate-600 hover:text-slate-900"><i class="fa-solid fa-arrow-left mr-1"></i> Back</button>
+                    <button onclick="goToCheckoutStep(3)" class="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-6 py-3 rounded-xl text-xs shadow-md transition">Continue to Payment <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="checkout-step-3" class="hidden space-y-4">
+                <h3 class="text-xl font-black text-slate-900">Select Payment Method</h3>
+                <div class="space-y-3">
+                    <label class="border-2 border-emerald-500 bg-emerald-50 p-4 rounded-2xl cursor-pointer flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <input type="radio" name="payment-method" value="UPI" checked class="accent-emerald-600">
+                            <div>
+                                <div class="text-xs font-black text-emerald-900">UPI Instant Pay (GPay / PhonePe / QR)</div>
+                                <div class="text-[11px] text-emerald-700">Scan QR or enter UPI ID</div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-qrcode text-xl text-emerald-700"></i>
+                    </label>
+                    <label class="border border-slate-200 hover:border-emerald-300 p-4 rounded-2xl cursor-pointer flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <input type="radio" name="payment-method" value="COD" class="accent-emerald-600">
+                            <div>
+                                <div class="text-xs font-bold text-slate-900">Cash / UPI on Delivery</div>
+                                <div class="text-[11px] text-slate-500">Pay when rider arrives</div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-money-bill-wave text-xl text-slate-600"></i>
+                    </label>
+                </div>
+                <div class="pt-4 flex justify-between items-center">
+                    <button onclick="goToCheckoutStep(2)" class="text-xs font-bold text-slate-600 hover:text-slate-900"><i class="fa-solid fa-arrow-left mr-1"></i> Back</button>
+                    <button onclick="processOrderConfirmation()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-black px-8 py-3.5 rounded-xl text-xs shadow-lg shadow-emerald-600/30 transition">Confirm & Place Order <i class="fa-solid fa-check ml-1"></i></button>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div id="checkout-step-4" class="hidden text-center space-y-5 py-4">
+                <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto animate-bounce">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-slate-900">Order Placed Successfully! 🎉</h3>
+                    <p class="text-xs text-slate-500">Order ID: <strong id="confirmed-order-id" class="text-emerald-700">VB-849204</strong></p>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left space-y-3">
+                    <div class="text-xs font-extrabold text-slate-800 flex items-center justify-between">
+                        <span>Live Delivery Status:</span>
+                        <span class="text-emerald-600 font-black animate-pulse">⚡ Arriving in 14 Mins</span>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex items-center gap-2 text-emerald-700 font-bold"><i class="fa-solid fa-circle-check"></i> Order Received & Confirmed</div>
+                        <div class="flex items-center gap-2 text-emerald-700 font-bold"><i class="fa-solid fa-circle-check"></i> Fresh Basket Packed at Store</div>
+                        <div class="flex items-center gap-2 text-amber-600 font-bold"><i class="fa-solid fa-person-biking animate-pulse"></i> Rider assigned (Helpline: 8283945753)</div>
+                    </div>
+                </div>
+
+                <div class="space-y-2 pt-2">
+                    <a id="whatsapp-order-btn" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 shadow-md transition">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Send Order Receipt to WhatsApp (+91 8283945753)</span>
+                    </a>
+                    <button onclick="closeCheckoutModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 rounded-xl text-xs transition">Continue Shopping</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Location Modal -->
+    <div id="location-modal" class="modal-overlay">
+        <div class="modal-container max-w-md p-6 relative">
+            <button onclick="closeLocationModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-lg font-black text-slate-900 mb-1">Select Delivery City</h3>
+            <p class="text-xs text-slate-500 mb-4">Choose your city for 15-minute express delivery availability</p>
+            <div class="space-y-2 text-xs font-semibold">
+                <button onclick="selectCity('Mumbai', '400001')" class="w-full text-left p-3 rounded-xl bg-emerald-50 text-emerald-900 border border-emerald-300 flex items-center justify-between">
+                    <span>Mumbai (Maharashtra)</span>
+                    <span class="text-[10px] font-bold bg-emerald-200 text-emerald-800 px-2 py-0.5 rounded">15m Live</span>
+                </button>
+                <button onclick="selectCity('Bengaluru', '560001')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-slate-200 flex items-center justify-between">
+                    <span>Bengaluru (Karnataka)</span>
+                    <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">15m Live</span>
+                </button>
+                <button onclick="selectCity('Delhi NCR', '110001')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-slate-200 flex items-center justify-between">
+                    <span>Delhi NCR (Gurugram / Noida)</span>
+                    <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">15m Live</span>
+                </button>
+                <button onclick="selectCity('Pune', '411001')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 border border-slate-200 flex items-center justify-between">
+                    <span>Pune (Maharashtra)</span>
+                    <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">15m Live</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div id="wishlist-modal" class="modal-overlay">
+        <div class="modal-container max-w-lg p-6 relative">
+            <button onclick="closeWishlistModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-lg font-black text-slate-900 mb-1">Your Saved Wishlist</h3>
+            <p class="text-xs text-slate-500 mb-4">Quickly add saved organic produce to your cart</p>
+            <div id="wishlist-items-container" class="space-y-3 max-h-96 overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <!-- Floating Customer Support Action Button -->
+    <a href="tel:8283945753" class="floating-support-btn" title="Call Customer Support">
+        <i class="fa-solid fa-phone-volume text-amber-300"></i>
+        <span>Helpline: 8283945753</span>
+    </a>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Swiper & Canvas Confetti Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- Application Scripts -->
+    <script src="products.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

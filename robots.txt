@@ -1,0 +1,83 @@
+# ==============================================================================
+# DIGITAL GROWTH LAB™ - Official robots.txt
+# Website: https://digitallabgrowth.com/
+# Executive Leadership: Founder & Owner ANVI (CEO)
+# Priority Hotline: +91 8283945753
+# Operations: 100% Online & Remote Growth Marketing Agency Worldwide
+# ==============================================================================
+
+User-agent: *
+Allow: /
+
+# Allow crawling of critical assets and rendering resources
+Allow: /assets/
+Allow: /demos/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Protect sensitive, hidden, or development files
+Disallow: /.*
+Disallow: /*.json$
+Disallow: /*.log$
+Disallow: /*.md$
+Disallow: /scratch/
+
+# Specific search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Dedicated AI Answer Engines & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Google-Extended
+Allow: /
+
+# LLM Machine-Readable Index
+# Specification: https://llmstxt.org/
+# Core Context: https://digitallabgrowth.com/llms.txt
+# Extended Context: https://digitallabgrowth.com/llms-full.txt
+
+# Sitemap Index Reference
+Sitemap: https://digitallabgrowth.com/sitemap.xml
+

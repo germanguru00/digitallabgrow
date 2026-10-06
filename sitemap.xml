@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ==========================================================================
+       DIGITAL GROWTH LAB™ - XML SITEMAP
+       Website: https://digitallabgrowth.com/
+       Governed by: Founder &amp; Owner ANVI
+       Direct Priority Hotline: +91 8283945753
+       Operations: 100% Online & Remote Digital Growth Agency Worldwide
+       ========================================================================== -->
+
+  <!-- 1. Home Page -->
+  <url>
+    <loc>https://digitallabgrowth.com/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/logo.jpg</image:loc>
+      <image:title>DIGITAL GROWTH LAB™ - Strategy • Traffic • Conversions</image:title>
+      <image:caption>Official Brand Logo of Digital Growth Lab</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/owner-anvi.jpg</image:loc>
+      <image:title>ANVI - Founder &amp; Owner of Digital Growth Lab</image:title>
+      <image:caption>Founder &amp; CEO Anvi directing digital growth strategies</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/agency-strategy.jpg</image:loc>
+      <image:title>Live Strategy War Room</image:title>
+      <image:caption>Agency strategic war room directed by Founder &amp; Owner Anvi</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 2. Services Directory & Full-Stack Capabilities -->
+  <url>
+    <loc>https://digitallabgrowth.com/services.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/seo-development.jpg</image:loc>
+      <image:title>Google Page #1 SEO &amp; Custom Web Development</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/social-media-ads.jpg</image:loc>
+      <image:title>High-ROAS Google &amp; Meta Ads Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/agency-strategy.jpg</image:loc>
+      <image:title>Conversion Architecture &amp; CRO</image:title>
+    </image:image>
+  </url>
+
+  <!-- 3. Case Studies & Verified Search Proof -->
+  <url>
+    <loc>https://digitallabgrowth.com/case-studies.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/marketing-dashboard.jpg</image:loc>
+      <image:title>Verified Client Google Rankings &amp; Growth Telemetry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/social-media-ads.jpg</image:loc>
+      <image:title>Commercial Search Keyword Proof</image:title>
+    </image:image>
+  </url>
+
+  <!-- 4. Interactive Client Demo Websites Showroom -->
+  <url>
+    <loc>https://digitallabgrowth.com/demos.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/owner-anvi.jpg</image:loc>
+      <image:title>Anvi Sood Official Brand Portal &amp; Client Demos</image:title>
+    </image:image>
+  </url>
+
+  <!-- 5. About Us & Executive Leadership -->
+  <url>
+    <loc>https://digitallabgrowth.com/about.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/owner-anvi.jpg</image:loc>
+      <image:title>Executive Leadership - Founder &amp; Owner ANVI</image:title>
+      <image:caption>Founder &amp; CEO Anvi profile</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/agency-strategy.jpg</image:loc>
+      <image:title>Strategic War Room &amp; Agency Heritage</image:title>
+    </image:image>
+  </url>
+
+  <!-- 6. AI Diagnostic Tools & ROI Estimator -->
+  <url>
+    <loc>https://digitallabgrowth.com/tools.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 7. Contact Us & Discovery Consultation Desk -->
+  <url>
+    <loc>https://digitallabgrowth.com/contact.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/owner-anvi.jpg</image:loc>
+      <image:title>Direct Consultation with Founder &amp; Owner Anvi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://digitallabgrowth.com/assets/agency-strategy.jpg</image:loc>
+      <image:title>Online Strategy Desk</image:title>
+    </image:image>
+  </url>
+
+  <!-- 8. Official Privacy Policy -->
+  <url>
+    <loc>https://digitallabgrowth.com/privacy-policy.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ==========================================================================
+       INTERACTIVE CLIENT DEMO APPLICATION BUILDS
+       ========================================================================== -->
+
+  <!-- Demo 1: Uptownie Girly Haul (E-Commerce) -->
+  <url>
+    <loc>https://digitallabgrowth.com/demos/shopping-haul/index.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Demo 2: VerdantBasket Supermarket (Grocery & Quick-Commerce) -->
+  <url>
+    <loc>https://digitallabgrowth.com/demos/grocery/index.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Demo 3: Sandhu Modular Kitchen (Luxury Interiors & Architecture) -->
+  <url>
+    <loc>https://digitallabgrowth.com/demos/sandhu/index.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Demo 4: ANVI GERMAN MASTER (EdTech & Language Academy) -->
+  <url>
+    <loc>https://digitallabgrowth.com/demos/german-guru/index.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ==========================================================================
+       LLM & AI DISCOVERY ENDPOINTS (llms.txt Standard)
+       ========================================================================== -->
+  <url>
+    <loc>https://digitallabgrowth.com/llms.txt</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://digitallabgrowth.com/llms-full.txt</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
