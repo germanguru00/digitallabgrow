@@ -1,0 +1,34 @@
+﻿# ==============================================================================
+# Robots.txt for GERMAN GURU
+# Website: https://germanguru.co.in
+# Premier German Language Institute - Sector 34A Chandigarh
+# ==============================================================================
+
+# Allow all reputable web crawlers to access site content
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /assets/images/
+Allow: /assets/images/gallery/
+Allow: /css/
+Allow: /js/
+
+# Dedicated rule for Google Image Search bot
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /assets/images/gallery/
+
+# Dedicated rule for Bing bot
+User-agent: bingbot
+Allow: /
+
+# Dedicated rule for Applebot
+User-agent: Applebot
+Allow: /
+
+# Disallow private scratch or temporary build folders
+Disallow: /scratch/
+Disallow: /.git/
+
+# Official XML Sitemap Location
+Sitemap: https://germanguru.co.in/sitemap.xml

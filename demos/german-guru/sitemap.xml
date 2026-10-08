@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 1. Homepage -->
+  <url>
+    <loc>https://germanguru.co.in/</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://germanguru.co.in/assets/images/logo.png</image:loc>
+      <image:title>German Guru Official Crest Logo</image:title>
+      <image:caption>German Guru - Premier German Language Institute in Chandigarh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://germanguru.co.in/assets/images/gallery/classroom_trainer.jpg</image:loc>
+      <image:title>Best German Class &amp; Course in Chandigarh Sector 34A</image:title>
+      <image:caption>German Guru Trainer conducting German lecture in Sector 34A Chandigarh</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 2. German Courses (A1 - C1) -->
+  <url>
+    <loc>https://germanguru.co.in/courses.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 3. Online & Offline Batches -->
+  <url>
+    <loc>https://germanguru.co.in/online-offline.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 4. Goethe Exams & Germany Ausbildung -->
+  <url>
+    <loc>https://germanguru.co.in/exams-ausbildung.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 5. Campus & Online Photo Gallery -->
+  <url>
+    <loc>https://germanguru.co.in/gallery.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://germanguru.co.in/assets/images/gallery/classroom_trainer.jpg</image:loc>
+      <image:title>Interactive German Trainer Mentorship Chandigarh</image:title>
+      <image:caption>Master trainer conducting speaking circle at German Guru Sector 34A</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://germanguru.co.in/assets/images/gallery/online_live_class.png</image:loc>
+      <image:title>Live Interactive Online German Class Studio</image:title>
+      <image:caption>Zoom video masterclasses with active student speaking practice</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://germanguru.co.in/assets/images/gallery/classroom_session.jpg</image:loc>
+      <image:title>Small Batch German Classroom in Chandigarh</image:title>
+      <image:caption>Personalized German tuition with 8-10 students max per batch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://germanguru.co.in/assets/images/gallery/classroom_av.jpg</image:loc>
+      <image:title>Smart Audio-Visual Lab and Goethe Listening Exam Drill</image:title>
+      <image:caption>High definition audio screen drills for Goethe-Zertifikat preparation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://germanguru.co.in/assets/images/gallery/classroom_batch.jpg</image:loc>
+      <image:title>Goethe Exam &amp; University Preparation Cohort</image:title>
+      <image:caption>German language coaching for higher studies and job visas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://germanguru.co.in/assets/images/gallery/celebration_event.jpg</image:loc>
+      <image:title>Student Goethe Certificate Clearances and Milestone Celebrations</image:title>
+      <image:caption>Student community celebrations and teacher mentorship at German Guru</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://germanguru.co.in/assets/images/gallery/online_whiteboard_grammar.png</image:loc>
+      <image:title>Digital Whiteboard German Grammar Session</image:title>
+      <image:caption>Live stylus explanation of German grammar cases and prepositions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://germanguru.co.in/assets/images/gallery/germany_reichstag_berlin.jpg</image:loc>
+      <image:title>Destination Germany Berlin Reichstag and Higher Education Pathways</image:title>
+      <image:caption>German flag flying over Berlin Reichstag symbolizing education and career pathways in Germany</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 6. About Us & Certified Faculty -->
+  <url>
+    <loc>https://germanguru.co.in/about.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 7. Contact Us & Campus Location -->
+  <url>
+    <loc>https://germanguru.co.in/contact.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  <!-- 8. Managed By Digital Growth Lab Partner -->
+  <url>
+    <loc>https://germanguru.co.in/handled-by.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

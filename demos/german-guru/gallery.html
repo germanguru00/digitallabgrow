@@ -2,243 +2,600 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo & Video Gallery | ANVI GERMAN MASTER | Call 8283945753</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Photo Gallery | Student Life & Classrooms | GERMAN GURU</title>
   
-  <meta name="description" content="Explore photos of offline German & French language classes, live online webinars, Goethe certificate ceremonies, and student activities at ANVI GERMAN MASTER. Call 8283945753.">
+  <meta name="description" content="View authentic photos of GERMAN GURU offline classrooms in Sector 34A Chandigarh and live interactive Zoom online studio sessions. Call 6280723651.">
+  <meta name="keywords" content="German Guru photo gallery, German classes Chandigarh photos, German classroom Sector 34A, online German class Zoom photos">
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Photo Gallery | Life at GERMAN GURU">
+  <meta property="og:description" content="Glimpse inside our offline classroom training in Sector 34A Chandigarh and worldwide live online masterclasses.">
+  <meta property="og:url" content="https://germanguru.co.in/gallery.html">
+  <meta property="og:image" content="assets/images/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 14, 26, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 2200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-normal);
+    }
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lightbox-content-box {
+      max-width: 900px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+      position: relative;
+      transform: scale(0.95);
+      transition: transform var(--transition-normal);
+    }
+    .lightbox-modal.active .lightbox-content-box {
+      transform: scale(1);
+    }
+    .lightbox-img {
+      width: 100%;
+      max-height: 65vh;
+      object-fit: contain;
+      background: #000000;
+      display: block;
+    }
+    .lightbox-caption {
+      padding: 1.25rem 1.75rem;
+      background: #ffffff;
+    }
+    .lightbox-caption h4 {
+      font-size: 1.2rem;
+      color: var(--navy-850);
+      margin-bottom: 0.2rem;
+    }
+    .lightbox-caption p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: rgba(0,0,0,0.6);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 10;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: all var(--transition-fast);
+    }
+    .lightbox-close:hover {
+      background: var(--german-red);
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Top Bar -->
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
   <div class="top-bar">
-    <div class="container">
-      <div class="top-marquee">
-        <div class="top-marquee-content">
-          <span><i class="fas fa-camera text-gold"></i> Explore Our Classroom Sessions, Online Webinars & Goethe Exam Certificate Celebrations</span>
-          <span><i class="fas fa-phone-alt text-gold"></i> Direct Admission Helpline: +91 8283945753</span>
+    <div class="container top-bar-inner">
+      <div class="top-bar-marquee">
+        <div class="marquee-content">
+          <span class="top-tag"><span class="badge-pill">Admissions Open</span> Next German A1 & B1 Fast-Track Batches Starting Monday!</span>
+          <span class="top-tag"><i class="fas fa-award text-gold"></i> Official Preparation for Goethe-Zertifikat, TELC & TestDaF</span>
+          <span class="top-tag"><i class="fas fa-map-marker-alt text-gold"></i> Campus: Sector 34A, Chandigarh | Live Online Interactive Worldwide</span>
+          <span class="top-tag"><i class="fas fa-headset text-gold"></i> Admission Helpline: +91 6280723651</span>
         </div>
       </div>
-      <div class="top-contacts">
-        <a href="tel:+918283945753"><i class="fas fa-phone-alt"></i> +91 8283945753</a>
-        <a href="https://wa.me/918283945753" target="_blank" class="text-gold"><i class="fab fa-whatsapp"></i> Chat Helpline</a>
+      <div class="top-bar-contacts">
+        <a href="tel:+916280723651"><i class="fas fa-phone-alt"></i> +91 6280723651</a>
+        <a href="https://wa.me/916280723651?text=Hi%20German%20Guru,%20I%20want%20to%20inquire%20about%20German%20Classes" target="_blank" class="wa-link">
+          <i class="fab fa-whatsapp"></i> WhatsApp Support
+        </a>
+        <a href="https://www.instagram.com/german_gurus?stkn=YXd6Zmg1Yzd1bjll" target="_blank" class="insta-link">
+          <i class="fab fa-instagram"></i> @german_gurus
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- German Tricolor Line -->
+  <div class="german-tricolor-line">
+    <span class="c-black"></span>
+    <span class="c-red"></span>
+    <span class="c-gold"></span>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN NAVIGATION HEADER
+       ========================================================================== -->
   <header class="main-header">
     <div class="container header-container">
-      <a href="index.html" class="brand-logo">
-        <img src="assets/images/logo.jpg" alt="ANVI GERMAN MASTER Logo">
+      <a href="index.html" class="brand-logo" aria-label="German Guru Home">
+        <img src="assets/images/logo.png" alt="German Guru Logo" class="brand-logo-img">
         <div class="brand-text">
-          <span class="brand-title">ANVI GERMAN MASTER</span>
-          <span class="brand-subtitle">Language Institute & Overseas Education</span>
+          <span class="brand-title">GERMAN <span class="guru">GURU</span></span>
+          <span class="brand-subtitle">Language Institute</span>
         </div>
       </a>
 
+      <!-- Desktop Navigation Menu -->
       <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About Us</a>
-        <a href="german-classes.html" class="nav-link">German Classes</a>
-        <a href="french-classes.html" class="nav-link">French Classes</a>
-        <a href="ausbildung.html" class="nav-link">Ausbildung</a>
-        <a href="gallery.html" class="nav-link active">Photo Gallery</a>
+        <a href="courses.html" class="nav-link">Courses (A1-C1)</a>
+        <a href="exams-ausbildung.html" class="nav-link">Exams & Ausbildung</a>
+        <a href="gallery.html" class="nav-link active">Gallery</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
-      <div class="nav-actions">
-        <a href="tel:8283945753" class="btn btn-outline btn-sm"><i class="fas fa-phone"></i> 8283945753</a>
-        <a href="contact.html" class="btn btn-primary btn-sm">Book Free Demo</a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+      <!-- Action CTAs -->
+      <div class="header-actions">
+        <a href="tel:+916280723651" class="phone-quick-btn" aria-label="Call German Guru at +91 6280723651" title="Call: +91 6280723651">
+          <i class="fas fa-phone-alt"></i>
+        </a>
+        <button type="button" class="btn btn-primary btn-sm js-open-demo-modal">
+          <i class="fas fa-calendar-check"></i> Book Free Demo
+        </button>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Page Hero Banner -->
+  <!-- Mobile Slide Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/logo.png" alt="German Guru" class="brand-logo-img" style="width: 44px; height: 44px;">
+        <span class="brand-title" style="font-size: 1.2rem;">GERMAN <span class="guru">GURU</span></span>
+      </div>
+      <button type="button" class="drawer-close" id="drawerClose" aria-label="Close Menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <nav class="drawer-nav">
+      <a href="index.html" class="drawer-nav-link"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html" class="drawer-nav-link"><i class="fas fa-university"></i> About Us</a>
+      <a href="courses.html" class="drawer-nav-link"><i class="fas fa-graduation-cap"></i> Courses (A1 - C1)</a>
+      <a href="exams-ausbildung.html" class="drawer-nav-link"><i class="fas fa-certificate"></i> Goethe & Ausbildung</a>
+      <a href="gallery.html" class="drawer-nav-link active"><i class="fas fa-images"></i> Photo Gallery</a>
+      <a href="contact.html" class="drawer-nav-link"><i class="fas fa-map-marker-alt"></i> Contact Us</a>
+    </nav>
+
+    <div class="drawer-contacts">
+      <button type="button" class="btn btn-primary btn-block js-open-demo-modal">
+        <i class="fas fa-calendar-check"></i> Book Free Demo Class
+      </button>
+      <a href="tel:+916280723651" class="btn btn-dark btn-block">
+        <i class="fas fa-phone-alt"></i> Call: +91 6280723651
+      </a>
+      <a href="https://wa.me/916280723651?text=Hi%20German%20Guru,%20I%20want%20to%20inquire%20about%20classes" target="_blank" class="btn btn-whatsapp btn-block">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+      <a href="https://www.instagram.com/german_gurus?stkn=YXd6Zmg1Yzd1bjll" target="_blank" class="btn btn-block" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #ffffff;">
+        <i class="fab fa-instagram"></i> Follow @german_gurus
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       PAGE HERO BANNER
+       ========================================================================== -->
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb">
         <a href="index.html">Home</a> <span>/</span> <span>Photo Gallery</span>
       </div>
-      <h1>Classroom Life & Events Gallery</h1>
-      <p>A visual showcase of our small-batch offline classes, worldwide live online masterclasses, and student Goethe exam celebrations.</p>
+      <h1>Life at GERMAN GURU</h1>
+      <p>
+        Authentic snapshots of our interactive small-batch classroom training in Sector 34A Chandigarh, live Zoom webinars, and Goethe exam preparation sessions.
+      </p>
     </div>
   </section>
 
-  <!-- Photo Gallery Grid -->
+  <!-- ==========================================================================
+       GALLERY GRID SECTION
+       ========================================================================== -->
   <section class="gallery-section">
     <div class="container">
-      
-      <div class="gallery-tabs">
-        <button class="tab-btn gallery-tab-btn active" data-filter="all">All Photos</button>
-        <button class="tab-btn gallery-tab-btn" data-filter="offline">Offline Classes</button>
-        <button class="tab-btn gallery-tab-btn" data-filter="online">Live Online Webinars</button>
-        <button class="tab-btn gallery-tab-btn" data-filter="certificates">Goethe Certificates</button>
-        <button class="tab-btn gallery-tab-btn" data-filter="french">French Sessions</button>
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-camera-retro"></i> Visual Showcase</span>
+        <h2 class="section-title">Offline Classrooms & Online Masterclasses</h2>
+        <p class="section-subtitle">
+          Click on any photo to view in high-resolution full screen mode.
+        </p>
       </div>
 
       <div class="gallery-grid">
-        
-        <!-- Offline Class -->
-        <div class="gallery-card" data-category="offline">
-          <div class="gallery-img-wrapper">
-            <img src="assets/images/classroom_learning.jpg" alt="Interactive Classroom Session">
-            <span class="gallery-overlay-badge">Offline Batch</span>
+        <!-- Photo 1: Trainer Lecture -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper" onclick="openLightbox('assets/images/gallery/classroom_trainer.jpg', 'Interactive Trainer Mentorship', 'Senior Goethe certified instructor conducting German speaking and grammar circles at Sector 34A Chandigarh.')">
+            <img src="assets/images/gallery/classroom_trainer.jpg" alt="German Guru Trainer Lecture in Chandigarh">
+            <span class="gallery-overlay-badge badge-offline"><i class="fas fa-chalkboard-user"></i> Offline Sector 34A</span>
           </div>
           <div class="gallery-card-content">
-            <h3 class="gallery-card-title">German Grammar & Speaking Circle</h3>
-            <p class="gallery-card-desc">Trainer Anvi conducting a small batch interactive lesson on German cases and verb conjugations.</p>
+            <h3 class="gallery-card-title">Interactive Trainer Mentorship</h3>
+            <p class="gallery-card-desc">Personal guidance with interactive German grammar, phonetics, and Germany study roadmap.</p>
           </div>
         </div>
 
-        <!-- Online Class -->
-        <div class="gallery-card" data-category="online">
-          <div class="gallery-img-wrapper">
-            <img src="assets/images/online_class.jpg" alt="Live Online Zoom Class">
-            <span class="gallery-overlay-badge">Live Online Zoom</span>
+        <!-- Photo 2: Live Online Class -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper" onclick="openLightbox('assets/images/gallery/online_live_class.png', 'Live Interactive Online Studio', 'Worldwide students actively practicing German dialogue framing, vocabulary, and exam exercises in real-time.')">
+            <img src="assets/images/gallery/online_live_class.png" alt="Live Online German Class Zoom Meeting">
+            <span class="gallery-overlay-badge badge-online"><i class="fas fa-video"></i> Live Online Studio</span>
           </div>
           <div class="gallery-card-content">
-            <h3 class="gallery-card-title">Live HD Online Zoom Webinar Studio</h3>
-            <p class="gallery-card-desc">Interactive live online studio session allowing students across India and abroad to participate in real-time exercises.</p>
+            <h3 class="gallery-card-title">Live Interactive Online Studio</h3>
+            <p class="gallery-card-desc">Two-way video & mic interactions, real-time German chat exercises, and cloud lecture recordings.</p>
           </div>
         </div>
 
-        <!-- Certificate Ceremony -->
-        <div class="gallery-card" data-category="certificates">
-          <div class="gallery-img-wrapper">
-            <img src="assets/images/certificate_celebration.jpg" alt="Goethe Certificate Ceremony">
-            <span class="gallery-overlay-badge">Certificate Ceremony</span>
+        <!-- Photo 3: Small Batch Offline Class -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper" onclick="openLightbox('assets/images/gallery/classroom_session.jpg', 'Dedicated Small Batch Classroom', 'Small batch sizes (8-10 students) ensuring individual focus, desk corrections, and spoken practice.')">
+            <img src="assets/images/gallery/classroom_session.jpg" alt="Small Batch German Classroom in Chandigarh">
+            <span class="gallery-overlay-badge badge-offline"><i class="fas fa-users"></i> Small Batch Size</span>
           </div>
           <div class="gallery-card-content">
-            <h3 class="gallery-card-title">Goethe B1 / B2 Certificate Distribution</h3>
-            <p class="gallery-card-desc">Proud students celebrating clearing official Goethe-Zertifikat B1 and B2 exams with Master Trainer Anvi.</p>
+            <h3 class="gallery-card-title">Dedicated Classroom Learning</h3>
+            <p class="gallery-card-desc">Individual student desks with active whiteboard demonstrations and daily speaking rounds.</p>
           </div>
         </div>
 
-        <!-- French Classroom -->
-        <div class="gallery-card" data-category="french">
-          <div class="gallery-img-wrapper">
-            <img src="assets/images/french_classroom.jpg" alt="French Language Class">
-            <span class="gallery-overlay-badge">French Class</span>
+        <!-- Photo 4: Smart AV Classroom -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper" onclick="openLightbox('assets/images/gallery/classroom_av.jpg', 'Smart AV & Listening Drills', 'Equipped with multimedia screens and native audio playback for Goethe listening exam preparation.')">
+            <img src="assets/images/gallery/classroom_av.jpg" alt="Multimedia German Language Learning Session">
+            <span class="gallery-overlay-badge badge-offline"><i class="fas fa-tv"></i> Smart Audio-Visual Lab</span>
           </div>
           <div class="gallery-card-content">
-            <h3 class="gallery-card-title">French Phonetics & Conversation Class</h3>
-            <p class="gallery-card-desc">French specialist Meeta Thakral guiding students through DELF & TEF Canada oral speaking modules.</p>
+            <h3 class="gallery-card-title">Smart AV & Listening Drills</h3>
+            <p class="gallery-card-desc">Audio-visual learning aids for native listening speed comprehension (Hörverstehen) and sentence patterns.</p>
           </div>
         </div>
 
-        <!-- Masterclass Workshop -->
-        <div class="gallery-card" data-category="offline">
-          <div class="gallery-img-wrapper">
-            <img src="assets/images/hero_banner.jpg" alt="Language Masterclass Workshop">
-            <span class="gallery-overlay-badge">Masterclass Workshop</span>
+        <!-- Photo 5: Exam Batch -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper" onclick="openLightbox('assets/images/gallery/classroom_batch.jpg', 'Goethe Exam & University Cohort', 'Targeted training for Goethe-Zertifikat B1/B2, TestDaF, and higher education in top German universities.')">
+            <img src="assets/images/gallery/classroom_batch.jpg" alt="Goethe Exam Preparation Batch Chandigarh">
+            <span class="gallery-overlay-badge badge-offline"><i class="fas fa-graduation-cap"></i> Goethe Exam Prep</span>
           </div>
           <div class="gallery-card-content">
-            <h3 class="gallery-card-title">Study in Germany Orientation Seminar</h3>
-            <p class="gallery-card-desc">Annual counseling session for students preparing for German University admissions and Ausbildung placements.</p>
+            <h3 class="gallery-card-title">Goethe Exam & University Cohort</h3>
+            <p class="gallery-card-desc">Focused study groups clearing B1/B2 for German work visas, Ausbildung, and public university admissions.</p>
           </div>
         </div>
 
-        <!-- Trainer Anvi Portrait -->
-        <div class="gallery-card" data-category="offline">
-          <div class="gallery-img-wrapper">
-            <img src="assets/images/anvi_profile.jpg" alt="Trainer Anvi Classroom">
-            <span class="gallery-overlay-badge">Faculty Mentor</span>
+        <!-- Photo 6: Student & Faculty Celebration -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper" onclick="openLightbox('assets/images/gallery/celebration_event.jpg', 'Student Celebrations & Mentorship', 'Celebrating German exam success, Goethe certificate clearances, and student milestones at our Chandigarh campus.')">
+            <img src="assets/images/gallery/celebration_event.jpg" alt="German Guru Student and Teacher Celebration Event">
+            <span class="gallery-overlay-badge" style="border-color: var(--german-gold); color: var(--german-gold);"><i class="fas fa-cake-candles"></i> Student Celebrations</span>
           </div>
           <div class="gallery-card-content">
-            <h3 class="gallery-card-title">Trainer Anvi Mentorship</h3>
-            <p class="gallery-card-desc">Founder & Master Trainer Anvi providing 1-on-1 speaking evaluation and feedback in the language studio.</p>
+            <h3 class="gallery-card-title">Community & Milestone Celebrations</h3>
+            <p class="gallery-card-desc">Celebrating Goethe certificate clearances, Teacher's Day, and milestone achievements with our students.</p>
           </div>
         </div>
 
+        <!-- Photo 7: Live Digital Whiteboard -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper" onclick="openLightbox('assets/images/gallery/online_whiteboard_grammar.png', 'Digital Whiteboard Grammar Lab', 'Live digital pen breakdown of German Genitiv prepositions (trotz, wegen) during online classes.')">
+            <img src="assets/images/gallery/online_whiteboard_grammar.png" alt="Live Digital Whiteboard German Grammar Session">
+            <span class="gallery-overlay-badge badge-online"><i class="fas fa-pen-nib"></i> Live Digital Notes</span>
+          </div>
+          <div class="gallery-card-content">
+            <h3 class="gallery-card-title">Digital Whiteboard Grammar Lab</h3>
+            <p class="gallery-card-desc">Live stylus breakdown of complex German cases (Genitiv, Dativ) and conjunctions during interactive classes.</p>
+          </div>
+        </div>
+
+        <!-- Photo 8: Destination Germany & University Pathway -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper" onclick="openLightbox('assets/images/gallery/germany_reichstag_berlin.jpg', 'Gateway to Germany — Berlin &amp; Higher Education', 'Mastering German at German Guru is your proven bridge to tuition-free public universities, vocational Ausbildung apprenticeships, and high-growth careers across Germany.')">
+            <img src="assets/images/gallery/germany_reichstag_berlin.jpg" alt="German Flag Flying High over Berlin Reichstag Building - Destination Germany">
+            <span class="gallery-overlay-badge badge-offline" style="background: rgba(11,31,58,0.9); border-color: var(--german-gold); color: #ffffff;"><i class="fas fa-flag"></i> Destination Germany</span>
+          </div>
+          <div class="gallery-card-content">
+            <h3 class="gallery-card-title">Destination Germany: Berlin & Beyond</h3>
+            <p class="gallery-card-desc">Your German certification paves the path to top German public universities, Ausbildung contracts, and European PR.</p>
+          </div>
+        </div>
+
+        <!-- Callout Booking Card -->
+        <div class="gallery-card" style="background: linear-gradient(135deg, var(--navy-850) 0%, var(--navy-950) 100%); color: #ffffff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2.5rem 2rem;">
+          <div style="width: 64px; height: 64px; border-radius: var(--radius-full); background: rgba(0, 136, 232, 0.2); color: var(--ocean-light); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.25rem;">
+            <i class="fas fa-school"></i>
+          </div>
+          <h3 style="color: #ffffff; font-size: 1.45rem; margin-bottom: 0.6rem;">Visit Our Campus</h3>
+          <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            Walk into our Sector 34A Chandigarh campus or attend an online demo session from home.
+          </p>
+          <button type="button" class="btn btn-gold btn-block js-open-demo-modal">
+            <i class="fas fa-calendar-check"></i> Book Free Demo Class
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Bar -->
-  <section class="ausbildung-section" style="padding: 4rem 0; text-align: center;">
+  <!-- ==========================================================================
+       INSTAGRAM COMMUNITY HIGHLIGHT STRIP
+       ========================================================================== -->
+  <section style="background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%); padding: 4rem 0; color: #ffffff;">
     <div class="container">
-      <h2 style="color: #ffffff; font-size: 2.2rem; margin-bottom: 1rem;">Want to Join Our Next Batch?</h2>
-      <p style="color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem auto;">Book a free trial demo class or chat directly with Trainer Anvi to reserve your seat!</p>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="contact.html" class="btn btn-gold"><i class="fas fa-calendar-check"></i> Book Free Demo Class</a>
-        <a href="https://wa.me/918283945753" target="_blank" class="btn btn-outline" style="color: #ffffff; border-color: rgba(255,255,255,0.4);"><i class="fab fa-whatsapp"></i> WhatsApp 8283945753</a>
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
+        <div style="max-width: 650px;">
+          <span style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.2); padding: 0.4rem 0.95rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;">
+            <i class="fab fa-instagram"></i> Follow @german_gurus
+          </span>
+          <h2 style="color: #ffffff; font-size: 2.2rem; margin-bottom: 0.6rem; font-weight: 800;">
+            Follow Our Community on Instagram
+          </h2>
+          <p style="color: rgba(255, 255, 255, 0.92); font-size: 1.05rem; line-height: 1.6;">
+            Daily German vocabulary reels, student Goethe certificate clearances, grammar quizzes, and study in Germany updates.
+          </p>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/german_gurus?stkn=YXd6Zmg1Yzd1bjll" target="_blank" class="btn btn-lg" style="background: #ffffff; color: #b91c1c; font-weight: 800; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); display: inline-flex; align-items: center; gap: 0.65rem; border-radius: var(--radius-full); padding: 0.9rem 1.75rem;">
+            <i class="fab fa-instagram" style="color: #e1306c; font-size: 1.4rem;"></i> Follow @german_gurus
+          </a>
+        </div>
       </div>
     </div>
   </section>
+       LIGHTBOX POPUP MODAL
+       ========================================================================== -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-content-box" onclick="event.stopPropagation()">
+      <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Close Lightbox">
+        <i class="fas fa-times"></i>
+      </button>
+      <img src="" alt="Full Screen Preview" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption">
+        <h4 id="lightboxTitle">Title</h4>
+        <p id="lightboxDesc">Description</p>
+      </div>
+    </div>
+  </div>
 
-  <!-- Footer -->
+  <!-- ==========================================================================
+       GLOBAL FOOTER
+       ========================================================================== -->
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
-          <img src="assets/images/logo.jpg" alt="Logo" style="height: 48px; border-radius: 4px;">
-          <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.3rem; color: #ffffff;">ANVI GERMAN MASTER</span>
+        <div style="display: flex; align-items: center; gap: 0.9rem;">
+          <img src="assets/images/logo.png" alt="German Guru Logo" class="brand-logo-img">
+          <div>
+            <div class="brand-title" style="color: #ffffff; font-size: 1.45rem;">GERMAN <span class="guru">GURU</span></div>
+            <div class="brand-subtitle" style="color: #94a3b8;">Language Institute</div>
+          </div>
         </div>
-        <p>Premier German & French language institute committed to academic excellence, small batch coaching, Goethe/TELC exam success, and study/work opportunities in Europe.</p>
+        <p>
+          Premier German language institute committed to excellence in Goethe-Zertifikat, TELC, and TestDaF exam coaching. Offering small batch offline classrooms in Sector 34A Chandigarh and worldwide interactive live online classes from A1 to C1.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/german_gurus?stkn=YXd6Zmg1Yzd1bjll" target="_blank" class="social-icon instagram" aria-label="Follow us on Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/916280723651" target="_blank" class="social-icon" style="background: #25d366;" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="tel:+916280723651" class="social-icon" aria-label="Call Helpline">
+            <i class="fas fa-phone-alt"></i>
+          </a>
+        </div>
       </div>
 
       <div class="footer-col">
         <h4>Explore Pages</h4>
         <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us & Faculty</a>
-          <a href="german-classes.html">German Courses</a>
-          <a href="french-classes.html">French Courses</a>
-          <a href="ausbildung.html">Germany Ausbildung</a>
-          <a href="gallery.html">Photo Gallery</a>
-          <a href="contact.html">Contact Us</a>
+          <a href="index.html"><i class="fas fa-chevron-right text-gold"></i> Home</a>
+          <a href="about.html"><i class="fas fa-chevron-right text-gold"></i> About Our Institute</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German Courses (A1-C1)</a>
+          <a href="online-offline.html"><i class="fas fa-chevron-right text-gold"></i> Online & Offline Batches</a>
+          <a href="exams-ausbildung.html"><i class="fas fa-chevron-right text-gold"></i> Exams & Ausbildung</a>
+          <a href="gallery.html"><i class="fas fa-chevron-right text-gold"></i> Photo Gallery</a>
+          <a href="contact.html"><i class="fas fa-chevron-right text-gold"></i> Contact & Location</a>
         </div>
       </div>
 
       <div class="footer-col">
-        <h4>Contact Helpline</h4>
+        <h4>Course Levels</h4>
         <div class="footer-links">
-          <a href="tel:8283945753"><i class="fas fa-phone-alt"></i> Phone: 8283945753</a>
-          <a href="https://wa.me/918283945753" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: 8283945753</a>
-          <a href="mailto:info@anvigermanmaster.com"><i class="fas fa-envelope"></i> info@anvigermanmaster.com</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German A1 (Beginner)</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German A2 (Elementary)</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German B1 (Intermediate)</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German B2 (Upper Intermediate)</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German C1 (University)</a>
+          <a href="exams-ausbildung.html"><i class="fas fa-chevron-right text-gold"></i> Germany Ausbildung 2026-27</a>
         </div>
       </div>
 
       <div class="footer-col">
-        <h4>Photo Categories</h4>
-        <div class="footer-links">
-          <a href="gallery.html">Offline Classroom Learning</a>
-          <a href="gallery.html">Live Online Webinars</a>
-          <a href="gallery.html">Goethe Certificate Events</a>
+        <h4>Campus & Helpline</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Chandigarh Campus:</strong><br>
+            SCO Number 80-81-82, 1st Floor, Corner Building, Sector 34A, Chandigarh - 160034
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <strong>Helpline:</strong><br>
+            <a href="tel:+916280723651">+91 6280723651</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fab fa-instagram"></i>
+          <div>
+            <strong>Instagram:</strong><br>
+            <a href="https://www.instagram.com/german_gurus?stkn=YXd6Zmg1Yzd1bjll" target="_blank">@german_gurus</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-globe"></i>
+          <div>
+            <strong>Domain:</strong><br>
+            <a href="https://germanguru.co.in">germanguru.co.in</a>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="container footer-bottom">
-      <p>© 2026 ANVI GERMAN MASTER Language Institute. All Rights Reserved. Contact Helpline: +91 8283945753.</p>
+      <p>© 2026 GERMAN GURU (germanguru.co.in). All Rights Reserved. ISO Certified German Language Institute.</p>
+      <div style="display: flex; gap: 1.5rem;">
+        <a href="contact.html">Privacy Policy</a>
+        <a href="contact.html">Terms & Conditions</a>
+        <a href="contact.html">Goethe Exam Registration Help</a>`n        <a href="sitemap.xml" target="_blank">XML Sitemap</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Floating Call & WhatsApp Buttons -->
-  <a href="tel:8283945753" class="floating-call-btn" aria-label="Call 8283945753" title="Call Helpline 8283945753">
-    <i class="fas fa-phone-alt"></i>
-  </a>
+  <!-- Floating Actions -->
+  <div class="floating-actions">
+    <a href="https://wa.me/916280723651?text=Hallo%20German%20Guru!%20I%20saw%20your%20classroom%20photos%20and%20want%20to%20inquire." target="_blank" class="floating-btn floating-wa" aria-label="Chat on WhatsApp" title="WhatsApp +91 6280723651">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+916280723651" class="floating-btn floating-call" aria-label="Call Helpline" title="Call Helpline +91 6280723651">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+  </div>
 
-  <a href="https://wa.me/918283945753?text=Hi%20Anvi%20German%20Master,%20I%20saw%20your%20photo%20gallery" target="_blank" class="floating-whatsapp">
-    <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.9-186.6 184.9zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-  </a>
-
-  <!-- Mobile Bottom Sticky Action Bar -->
+  <!-- Mobile Bottom Action Bar -->
   <div class="mobile-bottom-bar">
     <div class="mobile-bottom-grid">
-      <a href="tel:8283945753" class="mobile-action-btn btn-mobile-call">
-        <i class="fas fa-phone-alt"></i> Call 8283945753
+      <a href="tel:+916280723651" class="mobile-bottom-btn btn-m-call">
+        <i class="fas fa-phone-alt"></i> Call 6280723651
       </a>
-      <a href="https://wa.me/918283945753?text=Hi%20Anvi%20German%20Master,%20I%20want%20to%20inquire" target="_blank" class="mobile-action-btn btn-mobile-wa">
+      <a href="https://wa.me/916280723651?text=Hallo%20German%20Guru!%20I%20want%20to%20inquire%20about%20classes." target="_blank" class="mobile-bottom-btn btn-m-wa">
         <i class="fab fa-whatsapp"></i> WhatsApp Us
       </a>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Demo Modal -->
+  <div class="modal-overlay" id="demoModal">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn js-close-modal" aria-label="Close Modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="form-header">
+        <span class="badge badge-gold" style="margin-bottom: 0.4rem;"><i class="fas fa-calendar-check"></i> Free Trial Class</span>
+        <h3>Book Your Free Demo</h3>
+        <p>Experience our teaching methodology before you enroll. No credit card required.</p>
+      </div>
+
+      <form class="js-lead-form">
+        <div class="form-group">
+          <label class="form-label">Your Name *</label>
+          <input type="text" name="name" class="form-control" placeholder="e.g. Akshay Sharma" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone / WhatsApp Number *</label>
+          <input type="tel" name="phone" class="form-control" placeholder="6280723651" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Course Level of Interest *</label>
+          <select name="course" class="form-control" required>
+            <option value="German A1 Beginner">German A1 (Beginner Level)</option>
+            <option value="German A2 Elementary">German A2 (Elementary Level)</option>
+            <option value="German B1 Intermediate">German B1 (Goethe / TELC Prep)</option>
+            <option value="German B2 Upper Intermediate">German B2 (Ausbildung & Work Visa)</option>
+            <option value="German C1 Advanced">German C1 (University Level)</option>
+            <option value="Germany Ausbildung Program">Germany Ausbildung Program</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Preferred Mode</label>
+          <select name="mode" class="form-control">
+            <option value="Offline Classroom (Sector 34A Chandigarh)">Offline Classroom (Sector 34A Chandigarh)</option>
+            <option value="Live Online Interactive Studio">Live Online Interactive Studio (Zoom)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp btn-block btn-lg" style="margin-top: 1rem;">
+          <i class="fab fa-whatsapp"></i> Send Enquiry to WhatsApp & Confirm Demo
+        </button>
+
+        <div class="form-note" style="margin-top: 1rem;">
+          <i class="fab fa-whatsapp" style="color: #25d366;"></i> Directly connects you to our Chandigarh academic helpline on WhatsApp.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Lightbox Modal Functions
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+
+    function openLightbox(src, title, desc) {
+      if (!lightboxModal) return;
+      lightboxImg.src = src;
+      lightboxTitle.textContent = title;
+      lightboxDesc.textContent = desc;
+      lightboxModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightboxModal) return;
+      lightboxModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
+
+

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Website & Digital Marketing Handled by Digital Growth Lab™ | GERMAN GURU</title>
+  
+  <meta name="description" content="GERMAN GURU language institute official website, SEO, Google & Meta Ads, and digital growth infrastructure are engineered and handled by Digital Growth Lab™ (by Digital Marketing King®) led by Founder ANVI.">
+  <meta name="keywords" content="German Guru agency, handled by Digital Growth Lab, Digital Growth Lab Chandigarh, Owner Anvi, digital marketing agency, German Guru web developer, SEO agency Chandigarh">
+  <link rel="canonical" href="https://germanguru.co.in/handled-by.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    .handled-hero {
+      padding: 5rem 0 5.5rem 0;
+      background: radial-gradient(circle at 50% 15%, #102a4e 0%, var(--navy-850) 45%, var(--navy-950) 100%);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+    .handled-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        radial-gradient(circle at 85% 20%, rgba(0, 136, 232, 0.22) 0%, transparent 50%),
+        radial-gradient(circle at 15% 80%, rgba(16, 185, 129, 0.18) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .agency-card-main {
+      background: #ffffff;
+      color: var(--text-main);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 2.75rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .agency-header-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 2.5rem;
+    }
+    .agency-logo-title-group {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .agency-icon-badge {
+      width: 76px;
+      height: 76px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0b1f3a 0%, #0088e8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 2.2rem;
+      box-shadow: 0 10px 25px rgba(0, 136, 232, 0.3);
+      flex-shrink: 0;
+    }
+    .agency-brand-name {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--navy-850);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .agency-tagline {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.35rem;
+    }
+    .agency-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.1rem;
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .agency-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      animation: pulseGreen 1.5s infinite;
+    }
+    @keyframes pulseGreen {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+    }
+    .agency-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .meta-box {
+      background: var(--bg-body);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 1.35rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .meta-box:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+    .meta-box-icon {
+      font-size: 1.35rem;
+      color: var(--ocean-dark);
+      margin-bottom: 0.65rem;
+    }
+    .meta-box-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-bottom: 0.25rem;
+    }
+    .meta-box-val {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy-850);
+      word-break: break-word;
+    }
+    .meta-box-val a {
+      color: var(--ocean-dark);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .meta-box-val a:hover {
+      color: var(--navy-850);
+      text-decoration: underline;
+    }
+    .services-handled-section {
+      background: #f8fafc;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
+    .services-handled-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-850);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .service-checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .service-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .check-icon {
+      color: #10b981;
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-top: 0.1rem;
+    }
+    .social-showcase-box {
+      background: linear-gradient(135deg, #0b1f3a 0%, #102a4e 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .social-showcase-box h4 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .social-showcase-box p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto 1.5rem auto;
+    }
+    .social-pills-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .social-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      color: #ffffff;
+    }
+    .social-pill-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    .btn-insta {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+    .btn-fb {
+      background: #1877f2;
+    }
+    .btn-wa-agency {
+      background: #25d366;
+    }
+    .btn-web-agency {
+      background: var(--ocean-blue);
+    }
+    .action-button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    @media (max-width: 768px) {
+      .agency-card-main {
+        padding: 2rem 1.25rem;
+      }
+      .agency-brand-name {
+        font-size: 1.7rem;
+      }
+      .agency-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .social-pills-flex {
+        flex-direction: column;
+      }
+      .social-pill-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-marquee">
+        <div class="marquee-content">
+          <span class="top-tag"><span class="badge-pill">Admissions Open</span> Next German A1 & B1 Fast-Track Batches Starting Monday!</span>
+          <span class="top-tag"><i class="fas fa-award text-gold"></i> Official Preparation for Goethe-Zertifikat, TELC & TestDaF</span>
+          <span class="top-tag"><i class="fas fa-map-marker-alt text-gold"></i> Campus: Sector 34A, Chandigarh | Live Online Interactive Worldwide</span>
+          <span class="top-tag"><i class="fas fa-headset text-gold"></i> German Guru Helpline: +91 6280723651</span>
+        </div>
+      </div>
+      <div class="top-bar-contacts">
+        <a href="tel:+916280723651"><i class="fas fa-phone-alt"></i> +91 6280723651</a>
+        <a href="https://wa.me/916280723651?text=Hi%20German%20Guru,%20I%20want%20to%20inquire%20about%20German%20Classes" target="_blank" class="wa-link">
+          <i class="fab fa-whatsapp"></i> WhatsApp Support
+        </a>
+        <a href="https://www.instagram.com/german_gurus?stkn=YXd6Zmg1Yzd1bjll" target="_blank" class="insta-link">
+          <i class="fab fa-instagram"></i> @german_gurus
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- German Tricolor Line -->
+  <div class="german-tricolor-line">
+    <span class="c-black"></span>
+    <span class="c-red"></span>
+    <span class="c-gold"></span>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN NAVIGATION HEADER
+       ========================================================================== -->
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="German Guru Home">
+        <img src="assets/images/logo.png" alt="German Guru Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title">GERMAN <span class="guru">GURU</span></span>
+          <span class="brand-subtitle">Language Institute</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="courses.html" class="nav-link">Courses (A1-C1)</a>
+        <a href="exams-ausbildung.html" class="nav-link">Exams & Ausbildung</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Action CTAs -->
+      <div class="header-actions">
+        <a href="tel:+916280723651" class="phone-quick-btn" aria-label="Call German Guru at +91 6280723651" title="Call: +91 6280723651">
+          <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://digitallabgrowth.com/" target="_blank" class="btn btn-outline btn-sm">
+          <i class="fas fa-external-link-alt"></i> Digital Growth Lab
+        </a>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN AGENCY PARTNER SECTION
+       ========================================================================== -->
+  <main class="handled-hero">
+    <div class="container">
+      <div class="agency-card-main">
+        
+        <!-- Header Flex -->
+        <div class="agency-header-flex">
+          <div class="agency-logo-title-group">
+            <div class="agency-icon-badge">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div>
+              <h1 class="agency-brand-name">Digital Growth Lab™</h1>
+              <div class="agency-tagline">By Digital Marketing King® • 100% Online Performance Agency</div>
+            </div>
+          </div>
+          <div>
+            <span class="agency-pill-badge">
+              <span class="agency-pulse-dot"></span>
+              Official Digital Growth Partner
+            </span>
+          </div>
+        </div>
+
+        <!-- Description Paragraph -->
+        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+          The official web architecture, search engine optimization (SEO), answer engine optimization (AEO), performance student acquisition campaigns, and digital infrastructure for <strong>GERMAN GURU Language Institute</strong> are managed and powered end-to-end by <strong>Digital Growth Lab™</strong>, led by Founder &amp; CEO <strong>ANVI</strong>.
+        </p>
+
+        <!-- Information & Contact Grid -->
+        <div class="agency-meta-grid">
+          
+          <!-- Founder Box -->
+          <div class="meta-box">
+            <div class="meta-box-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="meta-box-label">Founder &amp; Owner</div>
+            <div class="meta-box-val">
+              ANVI <span style="font-size: 0.82rem; font-weight: 500; color: var(--text-light);">(Founder &amp; CEO)</span>
+            </div>
+            <div style="font-size: 0.8rem; margin-top: 0.25rem;">
+              <a href="https://anvisood.site/" target="_blank" style="color: var(--ocean-dark);">anvisood.site ↗</a>
+            </div>
+          </div>
+
+          <!-- Direct Phone Helpline -->
+          <div class="meta-box">
+            <div class="meta-box-icon"><i class="fas fa-phone-volume"></i></div>
+            <div class="meta-box-label">Direct Agency Helpline</div>
+            <div class="meta-box-val">
+              <a href="tel:+918283945753">+91 8283945753</a>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.25rem;">
+              Call &amp; WhatsApp Direct Support
+            </div>
+          </div>
+
+          <!-- Official Email -->
+          <div class="meta-box">
+            <div class="meta-box-icon"><i class="fas fa-envelope-open-text"></i></div>
+            <div class="meta-box-label">Official Agency Email</div>
+            <div class="meta-box-val" style="font-size: 0.95rem;">
+              <a href="mailto:digitalgrowthlab2709@gmail.com">digitalgrowthlab2709@gmail.com</a>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.25rem;">
+              Direct Executive Desk
+            </div>
+          </div>
+
+          <!-- Official Website -->
+          <div class="meta-box">
+            <div class="meta-box-icon"><i class="fas fa-globe"></i></div>
+            <div class="meta-box-label">Official Agency Portal</div>
+            <div class="meta-box-val">
+              <a href="https://digitallabgrowth.com/" target="_blank">digitallabgrowth.com ↗</a>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.25rem;">
+              100% Online Agency Operations
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Social Media Channels Box -->
+        <div class="social-showcase-box">
+          <h4><i class="fas fa-share-alt text-gold"></i> Official Agency Social Media</h4>
+          <p>
+            Connect directly with Digital Growth Lab™ across all verified social media platforms for high-converting marketing inquiries and digital partnerships.
+          </p>
+
+          <div class="social-pills-flex">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/digitallabgrowth" target="_blank" class="social-pill-btn btn-insta" aria-label="Instagram">
+              <i class="fab fa-instagram"></i> Instagram (@digitallabgrowth)
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/1BfHGAugLj/?mibextid=wwXIfr" target="_blank" class="social-pill-btn btn-fb" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i> Facebook Page
+            </a>
+
+            <!-- WhatsApp Direct -->
+            <a href="https://wa.me/918283945753?text=Hi%20Digital%20Growth%20Lab!%20I%20am%20inquiring%20about%20digital%20marketing%20and%20web%20growth." target="_blank" class="social-pill-btn btn-wa-agency" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i> WhatsApp Agency Desk
+            </a>
+
+            <!-- Live Portal -->
+            <a href="https://digitallabgrowth.com/" target="_blank" class="social-pill-btn btn-web-agency" aria-label="Website">
+              <i class="fas fa-external-link-alt"></i> digitallabgrowth.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Scope of Services Managed for German Guru -->
+        <div class="services-handled-section">
+          <h3 class="services-handled-title">
+            <i class="fas fa-cogs" style="color: var(--ocean-dark);"></i>
+            Services Handled by Digital Growth Lab for GERMAN GURU
+          </h3>
+
+          <div class="service-checklist-grid">
+            <div class="service-check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Google Page #1 SEO &amp; Local Chandigarh Citations</strong><br>
+                Algorithmic organic ranking for German Language Classes &amp; Goethe exams.
+              </div>
+            </div>
+
+            <div class="service-check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Generative &amp; Answer Engine Optimization (GEO &amp; AEO)</strong><br>
+                Structured data for ChatGPT, Google AI Overviews, and voice searches.
+              </div>
+            </div>
+
+            <div class="service-check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>High-ROAS Google &amp; Meta Ad Campaigns</strong><br>
+                Laser-targeted student acquisition funnels for A1-C1 &amp; Ausbildung admissions.
+              </div>
+            </div>
+
+            <div class="service-check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>High-Converting Responsive Web Design</strong><br>
+                100% mobile-friendly, lightning-fast architecture with automated demo booking flows.
+              </div>
+            </div>
+
+            <div class="service-check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Direct WhatsApp Instant Counseling Integration</strong><br>
+                Automated student query forwarding directly to admissions counselors.
+              </div>
+            </div>
+
+            <div class="service-check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>24/7 Cloud Uptime &amp; Real-Time Analytics</strong><br>
+                Continuous conversion rate optimization (CRO) and SSL enterprise security.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Action Row -->
+        <div class="action-button-row">
+          <a href="https://digitallabgrowth.com/" target="_blank" class="btn btn-primary btn-lg">
+            <i class="fas fa-rocket"></i> Visit Digital Growth Lab
+          </a>
+          <a href="tel:+918283945753" class="btn btn-outline btn-lg">
+            <i class="fas fa-phone-alt"></i> Call Agency (+91 8283945753)
+          </a>
+          <a href="index.html" class="btn btn-secondary btn-lg">
+            <i class="fas fa-arrow-left"></i> Back to GERMAN GURU
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="brand-logo" style="margin-bottom: 1rem;">
+          <img src="assets/images/logo.png" alt="German Guru" class="brand-logo-img" style="width: 46px; height: 46px;">
+          <div class="brand-text">
+            <span class="brand-title" style="color: #ffffff;">GERMAN <span class="guru">GURU</span></span>
+            <span class="brand-subtitle" style="color: rgba(255,255,255,0.7);">Language Institute</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Premier German language institute based in Sector 34A Chandigarh. Official training for Goethe-Zertifikat (A1-C1), TELC, TestDaF &amp; Germany Ausbildung counseling.
+        </p>
+        <p style="margin-top: 0.85rem; font-size: 0.85rem; color: rgba(255,255,255,0.75);">
+          Handled &amp; Managed by <a href="https://digitallabgrowth.com/" target="_blank" style="color: var(--ocean-light); font-weight: 700;">Digital Growth Lab™</a>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html"><i class="fas fa-chevron-right text-gold"></i> Home</a>
+          <a href="about.html"><i class="fas fa-chevron-right text-gold"></i> About Our Institute</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German Courses (A1-C1)</a>
+          <a href="online-offline.html"><i class="fas fa-chevron-right text-gold"></i> Online &amp; Offline Batches</a>
+          <a href="exams-ausbildung.html"><i class="fas fa-chevron-right text-gold"></i> Exams &amp; Ausbildung</a>
+          <a href="contact.html"><i class="fas fa-chevron-right text-gold"></i> Contact &amp; Location</a>
+          <a href="handled-by.html"><i class="fas fa-chevron-right text-gold"></i> Handled by Digital Growth Lab</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Digital Agency Partner</h4>
+        <div class="footer-links">
+          <a href="https://digitallabgrowth.com/" target="_blank"><i class="fas fa-globe text-gold"></i> Digital Growth Lab</a>
+          <a href="https://www.instagram.com/digitallabgrowth" target="_blank"><i class="fab fa-instagram text-gold"></i> @digitallabgrowth</a>
+          <a href="tel:+918283945753"><i class="fas fa-phone-alt text-gold"></i> Agency: +91 8283945753</a>
+          <a href="mailto:digitalgrowthlab2709@gmail.com"><i class="fas fa-envelope text-gold"></i> digitalgrowthlab2709@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>German Guru Campus</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Campus Location:</strong><br>
+            SCO 80-81-82, 1st Floor, Corner Building, Sector 34A, Chandigarh - 160034
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <strong>Admission Helpline:</strong><br>
+            <a href="tel:+916280723651">+91 6280723651</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 GERMAN GURU (germanguru.co.in). All Rights Reserved. Engineered &amp; Handled by <a href="https://digitallabgrowth.com/" target="_blank" style="color: var(--ocean-light); font-weight: 700;">Digital Growth Lab™</a>.</p>
+      <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+        <a href="contact.html">Privacy Policy</a>
+        <a href="contact.html">Terms &amp; Conditions</a>
+        <a href="handled-by.html">Managed by Digital Growth Lab</a>
+        <a href="sitemap.xml" target="_blank">XML Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Actions -->
+  <div class="floating-actions">
+    <a href="https://wa.me/916280723651?text=Hallo%20German%20Guru!%20I%20have%20an%20inquiry%20about%20German%20classes." target="_blank" class="floating-btn floating-wa" aria-label="Chat on WhatsApp" title="WhatsApp +91 6280723651">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+916280723651" class="floating-btn floating-call" aria-label="Call Helpline" title="Call Helpline +91 6280723651">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

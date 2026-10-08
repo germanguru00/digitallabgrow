@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Thank You | Demo Class Booked | GERMAN GURU Chandigarh</title>
+  
+  <meta name="description" content="Thank you for booking your free German language demo class with GERMAN GURU. Our senior language counselor in Sector 34A Chandigarh will connect with you shortly.">
+  <meta name="robots" content="noindex, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://germanguru.co.in/thank-you.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    .thankyou-section {
+      padding: 5rem 0 6rem 0;
+      background: radial-gradient(circle at 50% 20%, #102a4e 0%, var(--navy-850) 50%, var(--navy-950) 100%);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+    .thankyou-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(34, 197, 94, 0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .thankyou-card {
+      background: #ffffff;
+      color: var(--text-main);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2.5rem;
+      max-width: 820px;
+      margin: 0 auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .success-badge-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.35);
+      margin-bottom: 1.5rem;
+      animation: popSuccess 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+    @keyframes popSuccess {
+      0% { transform: scale(0.4); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .thankyou-title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--navy-850);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .thankyou-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+    }
+    .booking-summary-box {
+      background: var(--bg-body);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+    .summary-item-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    .summary-item-val {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy-850);
+    }
+    .steps-heading {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy-850);
+      margin-bottom: 1.5rem;
+    }
+    .next-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
+    .next-step-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .next-step-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--ocean-subtle);
+      color: var(--ocean-dark);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-text h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-850);
+      margin-bottom: 0.25rem;
+    }
+    .step-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin: 0;
+    }
+    .cta-button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .campus-note {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-light);
+    }
+    @media (max-width: 768px) {
+      .thankyou-card {
+        padding: 2.5rem 1.5rem;
+      }
+      .thankyou-title {
+        font-size: 2rem;
+      }
+      .cta-button-group {
+        flex-direction: column;
+      }
+      .cta-button-group .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-marquee">
+        <div class="marquee-content">
+          <span class="top-tag"><span class="badge-pill">Admissions Open</span> Next German A1 & B1 Fast-Track Batches Starting Monday!</span>
+          <span class="top-tag"><i class="fas fa-award text-gold"></i> Official Preparation for Goethe-Zertifikat, TELC & TestDaF</span>
+          <span class="top-tag"><i class="fas fa-map-marker-alt text-gold"></i> Campus: Sector 34A, Chandigarh | Live Online Interactive Worldwide</span>
+          <span class="top-tag"><i class="fas fa-headset text-gold"></i> Admission Helpline: +91 6280723651</span>
+        </div>
+      </div>
+      <div class="top-bar-contacts">
+        <a href="tel:+916280723651"><i class="fas fa-phone-alt"></i> +91 6280723651</a>
+        <a href="https://wa.me/916280723651?text=Hi%20German%20Guru,%20I%20want%20to%20inquire%20about%20German%20Classes" target="_blank" class="wa-link">
+          <i class="fab fa-whatsapp"></i> WhatsApp Support
+        </a>
+        <a href="https://www.instagram.com/german_gurus?stkn=YXd6Zmg1Yzd1bjll" target="_blank" class="insta-link">
+          <i class="fab fa-instagram"></i> @german_gurus
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- German Tricolor Line -->
+  <div class="german-tricolor-line">
+    <span class="c-black"></span>
+    <span class="c-red"></span>
+    <span class="c-gold"></span>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN NAVIGATION HEADER
+       ========================================================================== -->
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="German Guru Home">
+        <img src="assets/images/logo.png" alt="German Guru Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title">GERMAN <span class="guru">GURU</span></span>
+          <span class="brand-subtitle">Language Institute</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="courses.html" class="nav-link">Courses (A1-C1)</a>
+        <a href="exams-ausbildung.html" class="nav-link">Exams & Ausbildung</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Action CTAs -->
+      <div class="header-actions">
+        <a href="tel:+916280723651" class="phone-quick-btn" aria-label="Call German Guru at +91 6280723651" title="Call: +91 6280723651">
+          <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/916280723651?text=Hallo%20German%20Guru!%20I%20just%20submitted%20my%20demo%20booking." target="_blank" class="btn btn-whatsapp btn-sm">
+          <i class="fab fa-whatsapp"></i> Chat with Anvi
+        </a>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <img src="assets/images/logo.png" alt="German Guru" class="brand-logo-img" style="width: 44px; height: 44px;">
+        <span class="brand-title" style="font-size: 1.2rem;">GERMAN <span class="guru">GURU</span></span>
+      </div>
+      <button type="button" class="drawer-close" id="drawerClose" aria-label="Close Menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <nav class="drawer-nav">
+      <a href="index.html" class="drawer-nav-link"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html" class="drawer-nav-link"><i class="fas fa-university"></i> About Us</a>
+      <a href="courses.html" class="drawer-nav-link"><i class="fas fa-graduation-cap"></i> Courses (A1 - C1)</a>
+      <a href="online-offline.html" class="drawer-nav-link"><i class="fas fa-laptop-house"></i> Online & Offline</a>
+      <a href="exams-ausbildung.html" class="drawer-nav-link"><i class="fas fa-certificate"></i> Exams & Ausbildung</a>
+      <a href="gallery.html" class="drawer-nav-link"><i class="fas fa-images"></i> Photo Gallery</a>
+      <a href="contact.html" class="drawer-nav-link"><i class="fas fa-envelope"></i> Contact Us</a>
+    </nav>
+
+    <div class="drawer-footer">
+      <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.5rem;">Admission Helpline:</p>
+      <a href="tel:+916280723651" class="btn btn-primary btn-block btn-sm" style="margin-bottom: 0.5rem;">
+        <i class="fas fa-phone-alt"></i> +91 6280723651
+      </a>
+      <a href="https://wa.me/916280723651" target="_blank" class="btn btn-whatsapp btn-block btn-sm">
+        <i class="fab fa-whatsapp"></i> WhatsApp Instant Support
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       THANK YOU MAIN SECTION
+       ========================================================================== -->
+  <main class="thankyou-section">
+    <div class="container">
+      <div class="thankyou-card">
+        
+        <div class="success-badge-circle">
+          <i class="fas fa-check"></i>
+        </div>
+
+        <h1 class="thankyou-title" id="thankYouHeading">Vielen Dank! Free Demo Booked</h1>
+        <p class="thankyou-subtitle" id="thankYouSubtitle">
+          Your free demo class request has been received successfully! Our senior German Master Trainer will contact you shortly to confirm your schedule.
+        </p>
+
+        <!-- Booking Summary -->
+        <div class="booking-summary-box">
+          <div class="summary-grid">
+            <div>
+              <div class="summary-item-label">Student Name</div>
+              <div class="summary-item-val" id="summaryName">Registered Student</div>
+            </div>
+            <div>
+              <div class="summary-item-label">Target Level</div>
+              <div class="summary-item-val" id="summaryCourse">German Language Course</div>
+            </div>
+            <div>
+              <div class="summary-item-label">Booking Status</div>
+              <div class="summary-item-val" style="color: #10b981;">
+                <i class="fas fa-check-circle"></i> Confirmed & Queued
+              </div>
+            </div>
+            <div>
+              <div class="summary-item-label">Response Time</div>
+              <div class="summary-item-val" style="color: var(--ocean-dark);">
+                Within 15–30 Mins
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What Happens Next -->
+        <h4 class="steps-heading"><i class="fas fa-clipboard-list text-gold"></i> What Happens Next?</h4>
+        <div class="next-steps-grid">
+          <div class="next-step-card">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h5>Counselor Review</h5>
+              <p>Our senior trainer reviews your target level (Goethe, TELC, Ausbildung) and learning mode.</p>
+            </div>
+          </div>
+
+          <div class="next-step-card">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h5>Slot & Time Confirmation</h5>
+              <p>We confirm your preferred demo class slot (Morning, Evening, or Weekend batch).</p>
+            </div>
+          </div>
+
+          <div class="next-step-card">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h5>Trial Class & Study Material</h5>
+              <p>Receive your live Zoom / Sector 34A classroom invite with free starter German worksheets.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="cta-button-group">
+          <a href="https://wa.me/916280723651?text=Hallo%20GERMAN%20GURU!%20I%20just%20booked%20my%20Free%20Demo%20Class%20on%20the%20website.%20Please%20confirm%20my%20slot." target="_blank" class="btn btn-whatsapp btn-lg">
+            <i class="fab fa-whatsapp"></i> Fast-Track on WhatsApp
+          </a>
+
+          <a href="tel:+916280723651" class="btn btn-primary btn-lg">
+            <i class="fas fa-phone-alt"></i> Call Helpline (+91 6280723651)
+          </a>
+
+          <a href="index.html" class="btn btn-secondary btn-lg">
+            <i class="fas fa-home"></i> Back to Homepage
+          </a>
+        </div>
+
+        <div class="campus-note">
+          <i class="fas fa-map-marker-alt text-gold"></i> <strong>Campus:</strong> SCO Number 80-81-82, 1st Floor, Corner Building, Sector 34A, Chandigarh - 160034<br>
+          <span style="font-size: 0.82rem; margin-top: 0.35rem; display: inline-block;">
+            Working Hours: Monday to Saturday (08:30 AM – 07:30 PM IST)
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="brand-logo" style="margin-bottom: 1rem;">
+          <img src="assets/images/logo.png" alt="German Guru" class="brand-logo-img" style="width: 46px; height: 46px;">
+          <div class="brand-text">
+            <span class="brand-title" style="color: #ffffff;">GERMAN <span class="guru">GURU</span></span>
+            <span class="brand-subtitle" style="color: rgba(255,255,255,0.7);">Language Institute</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Premier German language institute based in Sector 34A Chandigarh. Official training for Goethe-Zertifikat (A1-C1), TELC, TestDaF & Germany Ausbildung counseling.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html"><i class="fas fa-chevron-right text-gold"></i> Home</a>
+          <a href="about.html"><i class="fas fa-chevron-right text-gold"></i> About Our Institute</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German Courses (A1-C1)</a>
+          <a href="online-offline.html"><i class="fas fa-chevron-right text-gold"></i> Online & Offline Batches</a>
+          <a href="exams-ausbildung.html"><i class="fas fa-chevron-right text-gold"></i> Exams & Ausbildung</a>
+          <a href="contact.html"><i class="fas fa-chevron-right text-gold"></i> Contact & Location</a>
+          <a href="handled-by.html"><i class="fas fa-chevron-right text-gold"></i> Handled by Digital Growth Lab</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Course Levels</h4>
+        <div class="footer-links">
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German A1 (Beginner)</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German A2 (Elementary)</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German B1 (Intermediate)</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German B2 (Upper Intermediate)</a>
+          <a href="courses.html"><i class="fas fa-chevron-right text-gold"></i> German C1 (University)</a>
+          <a href="exams-ausbildung.html"><i class="fas fa-chevron-right text-gold"></i> Germany Ausbildung 2026-27</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Campus & Helpline</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Chandigarh Campus:</strong><br>
+            SCO Number 80-81-82, 1st Floor, Corner Building, Sector 34A, Chandigarh - 160034
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <strong>Helpline:</strong><br>
+            <a href="tel:+916280723651">+91 6280723651</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fab fa-instagram"></i>
+          <div>
+            <strong>Instagram:</strong><br>
+            <a href="https://www.instagram.com/german_gurus?stkn=YXd6Zmg1Yzd1bjll" target="_blank">@german_gurus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 GERMAN GURU (germanguru.co.in). All Rights Reserved. ISO Certified German Language Institute. Website & Digital Marketing Handled by <a href="handled-by.html" style="color: var(--ocean-light); font-weight: 700; text-decoration: underline;">Digital Growth Lab™</a>.</p>
+      <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+        <a href="contact.html">Privacy Policy</a>
+        <a href="contact.html">Terms & Conditions</a>
+        <a href="handled-by.html">Managed by Digital Growth Lab</a>
+        <a href="sitemap.xml" target="_blank">XML Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Actions -->
+  <div class="floating-actions">
+    <a href="https://wa.me/916280723651?text=Hallo%20German%20Guru!%20I%20just%20booked%20my%20demo%20class." target="_blank" class="floating-btn floating-wa" aria-label="Chat on WhatsApp" title="WhatsApp +91 6280723651">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+916280723651" class="floating-btn floating-call" aria-label="Call Helpline" title="Call Helpline +91 6280723651">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+  </div>
+
+  <!-- Mobile Bottom Action Bar -->
+  <div class="mobile-bottom-bar">
+    <div class="mobile-bottom-grid">
+      <a href="tel:+916280723651" class="mobile-bottom-btn btn-m-call">
+        <i class="fas fa-phone-alt"></i> Call 6280723651
+      </a>
+      <a href="https://wa.me/916280723651?text=Hallo%20German%20Guru!%20I%20just%20booked%20my%20demo%20class." target="_blank" class="mobile-bottom-btn btn-m-wa">
+        <i class="fab fa-whatsapp"></i> WhatsApp Us
+      </a>
+    </div>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Personalize Thank You page with URL query params
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const studentName = urlParams.get('name');
+      const studentCourse = urlParams.get('course');
+
+      if (studentName && studentName.trim() !== '') {
+        const cleanName = decodeURIComponent(studentName.trim());
+        document.getElementById('thankYouHeading').textContent = `Vielen Dank, ${cleanName}!`;
+        document.getElementById('summaryName').textContent = cleanName;
+        document.getElementById('thankYouSubtitle').textContent = 
+          `Hallo ${cleanName}! Your free demo class request has been received. Our senior German trainer will contact you shortly on your phone/WhatsApp to confirm your slot.`;
+      }
+
+      if (studentCourse && studentCourse.trim() !== '') {
+        document.getElementById('summaryCourse').textContent = decodeURIComponent(studentCourse.trim());
+      }
+    });
+  </script>
+</body>
+</html>
